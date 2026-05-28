@@ -3,224 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lahore Luxury Rent A Car | Premium Car Rental in Lahore | Eid Offer</title>
-    <meta name="description" content="Lahore Luxury Rent A Car - Premium car rental service in Lahore. Alto to Land Cruiser. With/Without Driver. Eid Special Rs.15,000/day. Book 03104569041">
-    <meta name="keywords" content="rent a car Lahore, luxury car rental Lahore, car with driver Lahore, Eid car offer Lahore">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Lahore Luxury Rent A Car | Premium Car Rental in Lahore</title>
+    <meta name="description" content="Lahore Luxury Rent A Car - Premium car rental in Lahore. Alto to Land Cruiser. With/Without Driver. Eid Offer Rs.15,000/day. Book 03104569041">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0B1D36;
-            --secondary: #132743;
+            --dark: #0B1D36;
+            --dark-2: #132743;
             --gold: #D4AF37;
-            --gold-dark: #B8941F;
+            --gold-2: #B8941F;
             --green: #25D366;
-            --white: #ffffff;
-            --gray: #8892b0;
+            --white: #fff;
+            --gray: #8b9dc3;
         }
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        html {scroll-behavior: smooth;}
+        body {font-family: 'Poppins', sans-serif; background: var(--dark); color: var(--white); line-height: 1.7;}
+        .container {max-width: 1280px; margin: 0 auto; padding: 0 24px;}
         
-        * {margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
-        body {font-family: 'Poppins', sans-serif; background: var(--primary); color: var(--white); line-height: 1.7; overflow-x: hidden;}
-        .container {max-width: 1300px; margin: 0 auto; padding: 0 24px;}
-        
-        /* Header - Glassmorphism */
+        /* Header - Premium Glass */
         header {
-            background: rgba(11, 29, 54, 0.85);
-            backdrop-filter: blur(12px);
-            padding: 16px 0; 
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            background: rgba(11, 29, 54, 0.9);
+            backdrop-filter: blur(15px);
+            padding: 18px 0; 
             position: fixed; 
             width: 100%; 
             top: 0; 
             z-index: 1000;
-            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
         .nav {display: flex; justify-content: space-between; align-items: center;}
-        .logo {display: flex; align-items: center; gap: 12px;}
-        .logo svg {width: 48px; height: 48px;}
-        .logo-text h1 {font-size: 20px; color: var(--gold); letter-spacing: 0.5px; font-weight: 700;}
+        .logo {display: flex; align-items: center; gap: 14px;}
+        .logo svg {width: 52px; height: 52px;}
+        .logo-text h1 {font-size: 21px; color: var(--gold); font-weight: 700; letter-spacing: 0.5px;}
         .logo-text p {font-size: 11px; color: var(--gray); font-weight: 300;}
-        .nav-links {display: flex; gap: 32px; align-items: center;}
-        .nav-links a {color: var(--white); text-decoration: none; font-weight: 500; font-size: 15px; transition: 0.3s; position: relative;}
-        .nav-links a:after {content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background: var(--gold); transition: 0.3s;}
+        .nav-links {display: flex; gap: 36px;}
+        .nav-links a {color: var(--white); text-decoration: none; font-weight: 500; font-size: 15px; transition: 0.3s;}
         .nav-links a:hover {color: var(--gold);}
-        .nav-links a:hover:after {width: 100%;}
         .call-btn {
             background: var(--green); 
             color: white; 
-            padding: 12px 24px; 
+            padding: 13px 28px; 
             border-radius: 50px; 
             text-decoration: none; 
             font-weight: 600; 
             font-size: 14px;
             transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.35);
         }
-        .call-btn:hover {transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);}
+        .call-btn:hover {transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);}
         
-        /* Hero Section */
+        /* Hero - Luxury */
         .hero {
-            background: linear-gradient(135deg, rgba(11,29,54,0.95), rgba(19,39,67,0.9)), url('images/hero-bg.jpg'); 
+            background: linear-gradient(135deg, rgba(11,29,54,0.96), rgba(19,39,67,0.92)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070'); 
             background-size: cover; 
             background-position: center;
-            background-attachment: fixed;
-            padding: 180px 0 120px; 
+            padding: 200px 0 130px; 
             text-align: center;
-            margin-top: 80px;
         }
         .hero h2 {
-            font-size: 56px; 
+            font-size: 60px; 
             color: var(--gold); 
-            margin-bottom: 16px; 
+            margin-bottom: 18px; 
             font-weight: 800;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-            animation: fadeInUp 1s ease;
+            text-shadow: 0 5px 25px rgba(0,0,0,0.6);
+            line-height: 1.2;
         }
-        .hero .tagline {font-size: 24px; margin-bottom: 8px; color: var(--white); font-weight: 300; animation: fadeInUp 1s ease 0.2s backwards;}
-        .hero .subtagline {font-size: 18px; margin-bottom: 40px; color: var(--gold); font-weight: 600; animation: fadeInUp 1s ease 0.4s backwards;}
+        .hero .tagline {font-size: 24px; margin-bottom: 10px; color: var(--white); font-weight: 300;}
+        .hero .subtagline {font-size: 18px; margin-bottom: 45px; color: var(--gold); font-weight: 600;}
         .hero-btn {
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark)); 
+            background: linear-gradient(135deg, var(--gold), var(--gold-2)); 
             color: #000; 
-            padding: 16px 40px; 
+            padding: 18px 45px; 
             border-radius: 50px; 
             text-decoration: none; 
             font-weight: 700; 
-            font-size: 16px; 
+            font-size: 17px; 
             display: inline-block; 
             transition: 0.3s;
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
-            animation: fadeInUp 1s ease 0.6s backwards;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.45);
         }
-        .hero-btn:hover {transform: translateY(-3px); box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5);}
-        
-        @keyframes fadeInUp {
-            from {opacity: 0; transform: translateY(30px);}
-            to {opacity: 1; transform: translateY(0);}
-        }
+        .hero-btn:hover {transform: translateY(-3px); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6);}
         
         /* Sections */
-        .section {padding: 100px 0;}
+        .section {padding: 110px 0;}
         .section-title {
             text-align: center; 
-            font-size: 42px; 
+            font-size: 44px; 
             color: var(--gold); 
-            margin-bottom: 12px; 
+            margin-bottom: 14px; 
             font-weight: 700;
-            position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
         }
-        .section-title:after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background: var(--gold);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .section-subtitle {text-align: center; color: var(--gray); margin-bottom: 60px; font-size: 16px; font-weight: 300;}
+        .section-subtitle {text-align: center; color: var(--gray); margin-bottom: 70px; font-size: 17px; font-weight: 300;}
         
-        /* Car Cards - Premium */
-        .car-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px;}
+        /* Car Grid - Premium Cards */
+        .car-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 35px;}
         .car-card {
             background: linear-gradient(145deg, #132743, #0f1f35); 
-            border-radius: 16px; 
+            border-radius: 20px; 
             overflow: hidden; 
-            border: 1px solid rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.15);
             transition: all 0.4s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
         }
         .car-card:hover {
-            transform: translateY(-12px); 
+            transform: translateY(-15px); 
             border-color: var(--gold); 
-            box-shadow: 0 20px 50px rgba(212,175,55,0.25);
+            box-shadow: 0 25px 60px rgba(212,175,55,0.3);
         }
-        .car-card img {
-            width: 100%; 
-            height: 240px; 
-            object-fit: cover; 
-            transition: 0.4s;
-        }
-        .car-card:hover img {transform: scale(1.05);}
-        .car-info {padding: 24px;}
-        .car-info h3 {color: var(--gold); font-size: 22px; margin-bottom: 16px; font-weight: 600;}
-        .car-info p {margin: 10px 0; font-size: 15px; color: var(--gray);}
+        .car-card img {width: 100%; height: 250px; object-fit: cover; transition: 0.4s;}
+        .car-card:hover img {transform: scale(1.08);}
+        .car-info {padding: 28px;}
+        .car-info h3 {color: var(--gold); font-size: 23px; margin-bottom: 18px; font-weight: 600;}
+        .car-info p {margin: 11px 0; font-size: 15px; color: var(--gray);}
         .price {color: var(--green); font-weight: 700; font-size: 17px;}
         .whatsapp-btn {
             display: block; 
             background: var(--green); 
             color: white; 
             text-align: center; 
-            padding: 14px; 
-            border-radius: 10px; 
+            padding: 15px; 
+            border-radius: 12px; 
             text-decoration: none; 
-            margin-top: 20px; 
+            margin-top: 22px; 
             font-weight: 600; 
             transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 5px 18px rgba(37, 211, 102, 0.35);
         }
         .whatsapp-btn:hover {background: #128C7E; transform: translateY(-2px);}
         
-        /* Eid Special - Premium */
+        /* Eid Offer - Premium */
         .eid-offer {
             background: linear-gradient(135deg, #006400, #0B6623); 
             color: #fff; 
             text-align: center; 
-            padding: 60px 30px; 
-            border-radius: 20px; 
-            border: 2px solid var(--gold); 
+            padding: 70px 35px; 
+            border-radius: 24px; 
+            border: 3px solid var(--gold); 
             position: relative; 
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,100,0,0.4);
+            box-shadow: 0 25px 70px rgba(0,100,0,0.5);
         }
         .eid-badge {
             position: absolute; 
-            top: 20px; 
-            right: -35px; 
+            top: 25px; 
+            right: -40px; 
             background: var(--gold); 
             color: #000; 
-            padding: 8px 50px; 
+            padding: 10px 55px; 
             transform: rotate(45deg); 
-            font-weight: 700; 
-            font-size: 13px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            font-weight: 800; 
+            font-size: 14px;
         }
-        
-        /* Wedding Special */
-        .wedding {
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark)); 
-            color: #000; 
-            text-align: center; 
-            padding: 60px 30px; 
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
-        }
-        .wedding h2 {font-size: 36px; margin-bottom: 16px; font-weight: 800;}
         
         /* Booking Form - Premium */
-        .booking-container {
-            max-width: 650px; 
+        .booking-wrap {
+            max-width: 700px; 
             margin: 0 auto; 
             background: linear-gradient(145deg, #132743, #0f1f35); 
-            padding: 40px; 
-            border-radius: 20px; 
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            padding: 45px; 
+            border-radius: 24px; 
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.5);
         }
-        .form-grid {display: grid; grid-template-columns: 1fr 1fr; gap: 20px;}
-        .form-group {margin-bottom: 20px;}
+        .form-grid {display: grid; grid-template-columns: 1fr 1fr; gap: 22px;}
+        .form-group {margin-bottom: 22px;}
         .form-group.full {grid-column: 1 / -1;}
-        label {display: block; margin-bottom: 8px; color: var(--gold); font-weight: 600; font-size: 14px;}
+        label {display: block; margin-bottom: 9px; color: var(--gold); font-weight: 600; font-size: 14px;}
         input, select, textarea {
             width: 100%; 
-            padding: 14px 16px; 
-            border-radius: 10px; 
-            border: 1px solid rgba(212, 175, 55, 0.2); 
-            background: var(--primary); 
+            padding: 15px 18px; 
+            border-radius: 12px; 
+            border: 1px solid rgba(212, 175, 55, 0.25); 
+            background: var(--dark); 
             color: var(--white); 
             font-size: 15px; 
             font-family: 'Poppins', sans-serif;
@@ -229,83 +184,69 @@
         input:focus, select:focus, textarea:focus {
             outline: none; 
             border-color: var(--gold); 
-            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
         }
         .submit-btn {
             width: 100%; 
             background: var(--green); 
             color: white; 
-            padding: 16px; 
+            padding: 18px; 
             border: none; 
-            border-radius: 12px; 
-            font-size: 17px; 
+            border-radius: 14px; 
+            font-size: 18px; 
             font-weight: 700; 
             cursor: pointer; 
-            margin-top: 10px;
+            margin-top: 15px;
             transition: 0.3s;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
         }
-        .submit-btn:hover {background: #128C7E; transform: translateY(-2px);}
+        .submit-btn:hover {background: #128C7E; transform: translateY(-3px);}
         
         /* Terms */
         .terms {
             background: #000; 
-            padding: 50px; 
-            border-radius: 16px; 
-            border-left: 4px solid var(--gold);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            padding: 55px; 
+            border-radius: 20px; 
+            border-left: 5px solid var(--gold);
         }
-        .terms h3 {color: var(--gold); margin-bottom: 24px; font-size: 28px; font-weight: 700;}
-        .terms ul {list-style: none;}
-        .terms li {margin: 14px 0; padding-left: 30px; position: relative; color: var(--gray);}
-        .terms li:before {content: "✓"; color: var(--green); position: absolute; left: 0; font-weight: bold; font-size: 18px;}
-        .terms strong {color: var(--white);}
+        .terms h3 {color: var(--gold); margin-bottom: 28px; font-size: 30px; font-weight: 700;}
+        .terms li {margin: 16px 0; padding-left: 32px; position: relative; color: var(--gray);}
+        .terms li:before {content: "✓"; color: var(--green); position: absolute; left: 0; font-weight: bold; font-size: 19px;}
         
         /* Footer */
-        footer {
-            background: #000; 
-            text-align: center; 
-            padding: 60px 0 30px; 
-            margin-top: 80px; 
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-        }
+        footer {background: #000; text-align: center; padding: 70px 0 35px; margin-top: 90px; border-top: 1px solid rgba(212, 175, 55, 0.3);}
         
         /* WhatsApp Float */
         .whatsapp-float {
             position: fixed; 
-            bottom: 30px; 
-            right: 30px; 
+            bottom: 35px; 
+            right: 35px; 
             background: var(--green); 
             color: white; 
-            width: 65px; 
-            height: 65px; 
+            width: 68px; 
+            height: 68px; 
             border-radius: 50%; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            font-size: 32px; 
+            font-size: 34px; 
             text-decoration: none; 
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); 
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.55); 
             z-index: 999;
             transition: 0.3s;
-            animation: pulse 2s infinite;
         }
-        .whatsapp-float:hover {transform: scale(1.1);}
-        @keyframes pulse {
-            0%, 100% {box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);}
-            50% {box-shadow: 0 8px 35px rgba(37, 211, 102, 0.8);}
-        }
+        .whatsapp-float:hover {transform: scale(1.15);}
         
-        /* Mobile Responsive */
+        /* Mobile */
         @media (max-width: 768px) {
-            .hero h2 {font-size: 36px;}
-            .hero {padding: 140px 0 80px;}
+            .hero h2 {font-size: 38px;}
+            .hero {padding: 160px 0 90px;}
             .nav-links {display: none;}
-            .section {padding: 70px 0;}
-            .section-title {font-size: 32px;}
+            .section {padding: 80px 0;}
+            .section-title {font-size: 34px;}
             .car-grid {grid-template-columns: 1fr;}
             .form-grid {grid-template-columns: 1fr;}
-            .booking-container {padding: 30px 20px;}
+            .booking-wrap {padding: 35px 25px;}
         }
     </style>
 </head>
@@ -314,7 +255,7 @@
 <header>
     <div class="container nav">
         <div class="logo">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 100" xmlns="http://www.w3.org/2000/svg">
                 <defs><linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" /><stop offset="100%" style="stop-color:#B8941F;stop-opacity:1" /></linearGradient></defs>
                 <circle cx="50" cy="50" r="48" fill="#000" stroke="url(#goldGrad)" stroke-width="3"/>
                 <text x="50" y="45" font-family="Poppins" font-size="22" font-weight="800" fill="url(#goldGrad)" text-anchor="middle">LLRC</text>
@@ -350,28 +291,28 @@
 <section class="section container" id="eid-offer">
     <div class="eid-offer">
         <div class="eid-badge">LIMITED TIME</div>
-        <h2 style="font-size: 48px; margin-bottom: 12px; color: var(--gold); font-weight: 800;">🌙 EID SPECIAL OFFER 🌙</h2>
-        <p style="font-size: 20px; margin-bottom: 32px; font-weight: 300;">Celebrate This Eid with Lahore Luxury Rent A Car</p>
-        <div style="background: rgba(0,0,0,0.4); padding: 32px; border-radius: 16px; max-width: 750px; margin: 0 auto 36px; backdrop-filter: blur(10px);">
-            <img src="images/eid-jetour-x70.jpg" alt="Eid Special Jetour X70 Plus" style="width: 100%; max-width: 550px; border-radius: 12px; margin-bottom: 24px; border: 3px solid var(--gold); box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
-            <h3 style="font-size: 32px; color: #fff; margin-bottom: 12px; font-weight: 700;">JETOUR X70 PLUS DELUXE</h3>
-            <p style="font-size: 18px; margin: 8px 0; color: var(--gray);">7 Seater | Luxury SUV | Professional Driver Included</p>
-            <div style="margin: 28px 0;">
-                <p style="font-size: 16px; text-decoration: line-through; color: #ff9999; opacity: 0.7;">Regular Price: Rs. 17,000/Day</p>
-                <p style="font-size: 42px; font-weight: 800; color: var(--gold); margin: 8px 0;">EID OFFER: Rs. 15,000/Day</p>
-                <p style="font-size: 17px; font-weight: 600;">WITH DRIVER | SAVE Rs. 2,000 PER DAY!</p>
+        <h2 style="font-size: 52px; margin-bottom: 14px; color: var(--gold); font-weight: 800;">🌙 EID SPECIAL OFFER 🌙</h2>
+        <p style="font-size: 21px; margin-bottom: 36px; font-weight: 300;">Celebrate This Eid with Lahore Luxury Rent A Car</p>
+        <div style="background: rgba(0,0,0,0.45); padding: 36px; border-radius: 18px; max-width: 800px; margin: 0 auto 40px; backdrop-filter: blur(12px);">
+            <img src="images/eid-jetour-x70.jpg" alt="Eid Special Jetour X70 Plus" style="width: 100%; max-width: 600px; border-radius: 14px; margin-bottom: 28px; border: 3px solid var(--gold); box-shadow: 0 15px 50px rgba(0,0,0,0.6);">
+            <h3 style="font-size: 34px; color: #fff; margin-bottom: 14px; font-weight: 700;">JETOUR X70 PLUS DELUXE</h3>
+            <p style="font-size: 18px; margin: 10px 0; color: var(--gray);">7 Seater | Luxury SUV | Professional Driver Included</p>
+            <div style="margin: 32px 0;">
+                <p style="font-size: 17px; text-decoration: line-through; color: #ff9999; opacity: 0.8;">Regular Price: Rs. 17,000/Day</p>
+                <p style="font-size: 46px; font-weight: 800; color: var(--gold); margin: 10px 0;">EID OFFER: Rs. 15,000/Day</p>
+                <p style="font-size: 18px; font-weight: 600;">WITH DRIVER | SAVE Rs. 2,000 PER DAY!</p>
             </div>
-            <p style="font-size: 15px; color: var(--gold); margin-top: 20px; font-weight: 600;">✅ Available ONLY IN LAHORE</p>
-            <p style="font-size: 15px;">✅ Valid for Eid-ul-Fitr & Eid-ul-Adha 2026</p>
+            <p style="font-size: 16px; color: var(--gold); margin-top: 24px; font-weight: 600;">✅ Available ONLY IN LAHORE</p>
+            <p style="font-size: 16px;">✅ Valid for Eid-ul-Fitr & Eid-ul-Adha 2026</p>
         </div>
-        <a href="https://wa.me/923104569041?text=Assalamualaikum,%20Eid%20Special%20Offer%20Jetour%20X70%20Plus%20book%20karni%20hai%20Rs.15000/day%20me" style="background: var(--gold); color: #000; padding: 18px 48px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 18px; display: inline-block; box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);">🎉 Claim Eid Offer Now</a>
+        <a href="https://wa.me/923104569041?text=Assalamualaikum,%20Eid%20Special%20Offer%20Jetour%20X70%20Plus%20book%20karni%20hai%20Rs.15000/day%20me" style="background: var(--gold); color: #000; padding: 20px 50px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 19px; display: inline-block; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.55);">🎉 Claim Eid Offer Now</a>
     </div>
 </section>
 
 <!-- LOW BUDGET CARS -->
 <section class="section container" id="cars">
     <h2 class="section-title">Budget Friendly Fleet</h2>
-    <p class="section-subtitle">Best rates for Lahore city travel with complete comfort</p>
+    <p class="section-subtitle">Best rates for Lahore city travel with complete comfort & safety</p>
     <div class="car-grid">
         <div class="car-card"><img src="images/alto.jpg" alt="Suzuki Alto"><div class="car-info"><h3>Suzuki Alto 2026 Model</h3><p>5 Seater | Petrol | AC</p><p class="price">Rs. 5,000/Day Without Driver</p><p class="price">Rs. 6,000/Day With Driver 12H</p><a href="https://wa.me/923104569041?text=Suzuki%20Alto%202026%20book%20karni%20hai" class="whatsapp-btn">Book Now</a></div></div>
         <div class="car-card"><img src="images/cultus.jpg" alt="Suzuki Cultus"><div class="car-info"><h3>Suzuki Cultus 2020+ Model</h3><p>5 Seater | Petrol | AC</p><p class="price">Rs. 5,000/Day Without Driver</p><p class="price">Rs. 6,000/Day With Driver 12H</p><a href="https://wa.me/923104569041?text=Suzuki%20Cultus%20book%20karni%20hai" class="whatsapp-btn">Book Now</a></div></div>
@@ -388,7 +329,7 @@
     <p class="section-subtitle">Premium SUVs for executives, weddings & special occasions</p>
     <div class="car-grid">
         <div class="car-card"><img src="images/haval-h6.jpg" alt="Haval H6"><div class="car-info"><h3>Haval H6 - Latest Model</h3><p>5 Seater | Turbo | Luxury SUV</p><p class="price">Rs. 17,000/Day Without Driver</p><p class="price">Rs. 19,000/Day With Driver 12H</p><a href="https://wa.me/923104569041?text=Haval%20H6%20book%20karni%20hai" class="whatsapp-btn">Book Now</a></div></div>
-        <div class="car-card"><img src="images/jetour-dashing.jpg" alt="Jetour Dashing"><div class="car-info"><h3>Jetour Dashing - New</h3><p>5 Seater | Turbo | Futuristic Design</p><p class="price">Rs. 17,000/Day Without Driver</p><p class="price">Rs. 19,000/Day With Driver 12H</p><a href="https://wa.me/923104569041?text=Jetour%20Dashing%20book%20karni%20hai" class="whatsapp-btn">Book Now</a></div></div>
+        <div class="car-card"><img src="images/jetour-dashing.jpg" alt="Jetour Dashing"><div class="car-info"><h3>Jetour Dashing - New</h3><p>5 Seater | Turbo | Futuristic</p><p class="price">Rs. 17,000/Day Without Driver</p><p class="price">Rs. 19,000/Day With Driver 12H</p><a href="https://wa.me/923104569041?text=Jetour%20Dashing%20book%20karni%20hai" class="whatsapp-btn">Book Now</a></div></div>
         <div class="car-card"><img src="images/mg-hs.jpg" alt="MG HS"><div class="car-info"><h3>MG HS - Latest Model</h3><p>5 Seater | Turbo | Panoramic Roof</p><p class="price">Rs. 20,000/Day Without Driver</p><p class="price">Rs. 22,000/Day With Driver 12H</p><a href="https://wa.me/923104569041?text=MG%20HS%20book%20karni%20hai" class="whatsapp-btn">Book Now</a></div></div>
         <div class="car-card"><img src="images/tucson.jpg" alt="Hyundai Tucson"><div class="car-info"><h3>Hyundai Tucson - New</h3><p>5 Seater | Turbo | Premium SUV</p><p class="price">Rs. 20,000/Day Without Driver</p><p class="price">Rs. 22,000/Day With Driver 12H</p><a href="https://wa.me/923104569041?text=Hyundai%20Tucson%20book%20karni%20hai" class="whatsapp-btn">Book Now</a></div></div>
     </div>
@@ -409,15 +350,15 @@
 <section class="section container">
     <div class="wedding">
         <h2>WE'VE GOT THE PERFECT CAR FOR YOUR PERFECT DAY</h2>
-        <p style="font-size: 18px; margin: 16px 0; font-weight: 300;">Our Wedding Car Hire service will take care of all the little details</p>
-        <h3 style="margin-top: 36px; font-size: 28px; font-weight: 700;">Wedding Special Offer</h3>
-        <div style="background: rgba(0,0,0,0.15); padding: 28px; border-radius: 16px; margin-top: 24px; display: inline-block; max-width: 500px;">
-            <img src="images/land-cruiser.jpg" alt="Land Cruiser" style="width: 100%; max-width: 450px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-            <h4 style="font-size: 26px; font-weight: 700;">Toyota Land Cruiser LC 200/300</h4>
-            <p style="margin: 12px 0; font-size: 16px;">7 Seater | Ultimate Luxury | Wedding Decorated</p>
-            <p style="font-size: 22px; font-weight: 700; margin: 12px 0;">Rs. 60,000/Day Without Driver</p>
-            <p style="font-size: 22px; font-weight: 700;">Rs. 65,000/Day With Driver 12H</p>
-            <a href="https://wa.me/923104569041?text=Land%20Cruiser%20wedding%20ke%20liye%20book%20karni%20hai" class="hero-btn" style="margin-top: 20px; background: #000; color: var(--gold);">Book for Wedding</a>
+        <p style="font-size: 18px; margin: 18px 0; font-weight: 300;">Our Wedding Car Hire service will take care of all the little details</p>
+        <h3 style="margin-top: 40px; font-size: 30px; font-weight: 700;">Wedding Special Offer</h3>
+        <div style="background: rgba(0,0,0,0.15); padding: 32px; border-radius: 18px; margin-top: 28px; display: inline-block; max-width: 550px;">
+            <img src="images/land-cruiser.jpg" alt="Land Cruiser" style="width: 100%; max-width: 500px; border-radius: 14px; margin-bottom: 24px; box-shadow: 0 15px 40px rgba(0,0,0,0.4);">
+            <h4 style="font-size: 28px; font-weight: 700;">Toyota Land Cruiser LC 200/300</h4>
+            <p style="margin: 14px 0; font-size: 16px;">7 Seater | Ultimate Luxury | Wedding Decorated</p>
+            <p style="font-size: 24px; font-weight: 700; margin: 14px 0;">Rs. 60,000/Day Without Driver</p>
+            <p style="font-size: 24px; font-weight: 700;">Rs. 65,000/Day With Driver 12H</p>
+            <a href="https://wa.me/923104569041?text=Land%20Cruiser%20wedding%20ke%20liye%20book%20karni%20hai" class="hero-btn" style="margin-top: 24px; background: #000; color: var(--gold);">Book for Wedding</a>
         </div>
     </div>
 </section>
@@ -426,9 +367,9 @@
 <section class="section container" id="booking">
     <h2 class="section-title">Instant Booking System</h2>
     <p class="section-subtitle">Fill the form below & send directly to our WhatsApp</p>
-    <p style="text-align:center; color:var(--gold); margin-bottom:32px; font-weight:600; font-size: 15px;">✅ Only for Lahore Residents – CNIC Address Required</p>
+    <p style="text-align:center; color:var(--gold); margin-bottom:36px; font-weight:600; font-size: 16px;">✅ Only for Lahore Residents – CNIC Address Required</p>
     
-    <div class="booking-container">
+    <div class="booking-wrap">
         <form id="bookingForm" onsubmit="return false;">
             <div class="form-grid">
                 <div class="form-group"><label>Full Name *</label><input type="text" id="name" placeholder="Apna naam likhen" required></div>
@@ -437,4 +378,32 @@
             
             <div class="form-group full">
                 <label>Select Car *</label>
-               
+                <select id="car" required>
+                    <option value="">-- Car Choose Karein --</option>
+                    <optgroup label="Budget Friendly Cars">
+                        <option>Suzuki Alto 2026</option><option>Suzuki Cultus 2020+</option><option>Toyota Corolla Altis 1.6X</option>
+                        <option>Corolla Grande 1.8 2022+</option><option>Honda Civic 2020+</option><option>Toyota Fortuner 2020+</option>
+                    </optgroup>
+                    <optgroup label="Luxury SUVs">
+                        <option>Haval H6 Latest</option><option>Jetour Dashing New</option><option>MG HS Latest</option><option>Hyundai Tucson New</option>
+                    </optgroup>
+                    <optgroup label="7 Seater SUVs">
+                        <option>Honda BR-V New</option><option>Jetour X70 Plus New</option><option>Changan Oshan X7 New</option>
+                    </optgroup>
+                    <optgroup label="Wedding Special"><option>Toyota Land Cruiser LC200/300</option></optgroup>
+                    <optgroup label="Eid Special"><option>Jetour X70 Plus - Eid Offer Rs.15,000</option></optgroup>
+                </select>
+            </div>
+            
+            <div class="form-grid">
+                <div class="form-group"><label>Driver Option *</label><select id="driver" required><option value="">-- Select --</option><option>With Driver - 12 Hour Duty</option><option>Without Driver</option></select></div>
+                <div class="form-group"><label>Number of Days *</label><input type="number" id="days" min="1" placeholder="e.g. 3" required></div>
+            </div>
+            
+            <div class="form-grid">
+                <div class="form-group"><label>Pickup Date *</label><input type="date" id="date" required></div>
+                <div class="form-group"><label>Pickup Time *</label><input type="time" id="time" required></div>
+            </div>
+            
+            <div class="form-group full"><label>Trip Type *</label><select id="trip" required><option value="">-- Select --</option><option>Within Lahore City</option><option>One Way Out of City</option><option>Two Way Out of City</option></select></div>
+            <div class="form-group full"><label>Message / Special Request</label><textarea id="message" placeholder="Airport pickup, wedding decoration, etc." rows="4"></
