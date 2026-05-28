@@ -3,85 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lahore Luxury Rent A Car | Best Car Rental in Lahore | Eid Special Offer</title>
-    <meta name="description" content="Lahore Luxury Rent A Car - Premium car rental in Lahore. Alto to Land Cruiser. With/Without Driver. Travel Across Pakistan. Eid Offer Rs.15,000/day. Book 03104569041">
-    <meta name="keywords" content="rent a car Lahore, car rental Lahore, Lahore Luxury Rent A Car, with driver Lahore, Eid car offer">
+    <title>Lahore Luxury Rent A Car | Premium Car Rental in Lahore | Eid Offer</title>
+    <meta name="description" content="Lahore Luxury Rent A Car - Premium car rental service in Lahore. Alto to Land Cruiser. With/Without Driver. Eid Special Rs.15,000/day. Book 03104569041">
+    <meta name="keywords" content="rent a car Lahore, luxury car rental Lahore, car with driver Lahore, Eid car offer Lahore">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #0B1D36;
+            --secondary: #132743;
+            --gold: #D4AF37;
+            --gold-dark: #B8941F;
+            --green: #25D366;
+            --white: #ffffff;
+            --gray: #8892b0;
+        }
+        
         * {margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
-        body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0B1D36; color: #fff; line-height: 1.6;}
-       .container {max-width: 1200px; margin: 0 auto; padding: 0 20px;}
+        body {font-family: 'Poppins', sans-serif; background: var(--primary); color: var(--white); line-height: 1.7; overflow-x: hidden;}
+        .container {max-width: 1300px; margin: 0 auto; padding: 0 24px;}
         
-        /* Header */
-        header {background: #000; padding: 15px 0; border-bottom: 3px solid #D4AF37; position: sticky; top: 0; z-index: 1000;}
-       .nav {display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;}
-       .logo {display: flex; align-items: center; gap: 15px;}
-       .logo svg {width: 50px; height: 50px;}
-       .logo-text h1 {font-size: 20px; color: #D4AF37; letter-spacing: 1px;}
-       .logo-text p {font-size: 11px; color: #ccc;}
-       .nav-links {display: flex; gap: 25px;}
-       .nav-links a {color: #fff; text-decoration: none; font-weight: 500; transition: 0.3s;}
-       .nav-links a:hover {color: #D4AF37;}
-       .call-btn {background: #25D366; color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s;}
-       .call-btn:hover {background: #128C7E;}
+        /* Header - Glassmorphism */
+        header {
+            background: rgba(11, 29, 54, 0.85);
+            backdrop-filter: blur(12px);
+            padding: 16px 0; 
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .nav {display: flex; justify-content: space-between; align-items: center;}
+        .logo {display: flex; align-items: center; gap: 12px;}
+        .logo svg {width: 48px; height: 48px;}
+        .logo-text h1 {font-size: 20px; color: var(--gold); letter-spacing: 0.5px; font-weight: 700;}
+        .logo-text p {font-size: 11px; color: var(--gray); font-weight: 300;}
+        .nav-links {display: flex; gap: 32px; align-items: center;}
+        .nav-links a {color: var(--white); text-decoration: none; font-weight: 500; font-size: 15px; transition: 0.3s; position: relative;}
+        .nav-links a:after {content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background: var(--gold); transition: 0.3s;}
+        .nav-links a:hover {color: var(--gold);}
+        .nav-links a:hover:after {width: 100%;}
+        .call-btn {
+            background: var(--green); 
+            color: white; 
+            padding: 12px 24px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 14px;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        .call-btn:hover {transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);}
         
-        /* Hero */
-       .hero {background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/hero-bg.jpg'); background-size: cover; background-position: center; padding: 120px 0; text-align: center;}
-       .hero h2 {font-size: 48px; color: #D4AF37; margin-bottom: 10px; text-shadow: 2px 2px 4px #000;}
-       .hero .tagline {font-size: 22px; margin-bottom: 10px; color: #fff;}
-       .hero .subtagline {font-size: 18px; margin-bottom: 30px; color: #D4AF37; font-weight: 600;}
-       .hero-btn {background: #D4AF37; color: #000; padding: 15px 35px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 18px; display: inline-block; transition: 0.3s;}
-       .hero-btn:hover {transform: scale(1.05);}
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(11,29,54,0.95), rgba(19,39,67,0.9)), url('images/hero-bg.jpg'); 
+            background-size: cover; 
+            background-position: center;
+            background-attachment: fixed;
+            padding: 180px 0 120px; 
+            text-align: center;
+            margin-top: 80px;
+        }
+        .hero h2 {
+            font-size: 56px; 
+            color: var(--gold); 
+            margin-bottom: 16px; 
+            font-weight: 800;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease;
+        }
+        .hero .tagline {font-size: 24px; margin-bottom: 8px; color: var(--white); font-weight: 300; animation: fadeInUp 1s ease 0.2s backwards;}
+        .hero .subtagline {font-size: 18px; margin-bottom: 40px; color: var(--gold); font-weight: 600; animation: fadeInUp 1s ease 0.4s backwards;}
+        .hero-btn {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark)); 
+            color: #000; 
+            padding: 16px 40px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 16px; 
+            display: inline-block; 
+            transition: 0.3s;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+            animation: fadeInUp 1s ease 0.6s backwards;
+        }
+        .hero-btn:hover {transform: translateY(-3px); box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5);}
+        
+        @keyframes fadeInUp {
+            from {opacity: 0; transform: translateY(30px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
         
         /* Sections */
-       .section {padding: 70px 0;}
-       .section-title {text-align: center; font-size: 36px; color: #D4AF37; margin-bottom: 10px;}
-       .section-subtitle {text-align: center; color: #ccc; margin-bottom: 40px; font-size: 16px;}
-       .car-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;}
-       .car-card {background: #132743; border-radius: 12px; overflow: hidden; border: 1px solid #1e3a5f; transition: 0.3s;}
-       .car-card:hover {transform: translateY(-10px); border-color: #D4AF37; box-shadow: 0 10px 30px rgba(212,175,55,0.2);}
-       .car-card img {width: 100%; height: 220px; object-fit: cover; background: #0B1D36;}
-       .car-info {padding: 20px;}
-       .car-info h3 {color: #D4AF37; font-size: 20px; margin-bottom: 15px;}
-       .car-info p {margin: 8px 0; font-size: 15px;}
-       .price {color: #25D366; font-weight: bold; font-size: 16px;}
-       .whatsapp-btn {display: block; background: #25D366; color: white; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; margin-top: 15px; font-weight: bold; transition: 0.3s;}
-       .whatsapp-btn:hover {background: #128C7E;}
+        .section {padding: 100px 0;}
+        .section-title {
+            text-align: center; 
+            font-size: 42px; 
+            color: var(--gold); 
+            margin-bottom: 12px; 
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .section-subtitle {text-align: center; color: var(--gray); margin-bottom: 60px; font-size: 16px; font-weight: 300;}
         
-        /* Eid Special */
-       .eid-offer {background: linear-gradient(135deg, #008000, #0B6623); color: #fff; text-align: center; padding: 50px 20px; border-radius: 15px; border: 3px solid #D4AF37; position: relative; overflow: hidden;}
-       .eid-badge {position: absolute; top: -10px; right: -30px; background: #D4AF37; color: #000; padding: 10px 50px; transform: rotate(45deg); font-weight: bold; font-size: 14px;}
+        /* Car Cards - Premium */
+        .car-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px;}
+        .car-card {
+            background: linear-gradient(145deg, #132743, #0f1f35); 
+            border-radius: 16px; 
+            overflow: hidden; 
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .car-card:hover {
+            transform: translateY(-12px); 
+            border-color: var(--gold); 
+            box-shadow: 0 20px 50px rgba(212,175,55,0.25);
+        }
+        .car-card img {
+            width: 100%; 
+            height: 240px; 
+            object-fit: cover; 
+            transition: 0.4s;
+        }
+        .car-card:hover img {transform: scale(1.05);}
+        .car-info {padding: 24px;}
+        .car-info h3 {color: var(--gold); font-size: 22px; margin-bottom: 16px; font-weight: 600;}
+        .car-info p {margin: 10px 0; font-size: 15px; color: var(--gray);}
+        .price {color: var(--green); font-weight: 700; font-size: 17px;}
+        .whatsapp-btn {
+            display: block; 
+            background: var(--green); 
+            color: white; 
+            text-align: center; 
+            padding: 14px; 
+            border-radius: 10px; 
+            text-decoration: none; 
+            margin-top: 20px; 
+            font-weight: 600; 
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        .whatsapp-btn:hover {background: #128C7E; transform: translateY(-2px);}
+        
+        /* Eid Special - Premium */
+        .eid-offer {
+            background: linear-gradient(135deg, #006400, #0B6623); 
+            color: #fff; 
+            text-align: center; 
+            padding: 60px 30px; 
+            border-radius: 20px; 
+            border: 2px solid var(--gold); 
+            position: relative; 
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,100,0,0.4);
+        }
+        .eid-badge {
+            position: absolute; 
+            top: 20px; 
+            right: -35px; 
+            background: var(--gold); 
+            color: #000; 
+            padding: 8px 50px; 
+            transform: rotate(45deg); 
+            font-weight: 700; 
+            font-size: 13px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
         
         /* Wedding Special */
-       .wedding {background: linear-gradient(135deg, #D4AF37, #B8941F); color: #000; text-align: center; padding: 50px 20px; border-radius: 12px;}
-       .wedding h2 {font-size: 32px; margin-bottom: 15px; font-weight: 900;}
+        .wedding {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark)); 
+            color: #000; 
+            text-align: center; 
+            padding: 60px 30px; 
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
+        }
+        .wedding h2 {font-size: 36px; margin-bottom: 16px; font-weight: 800;}
         
-        /* Booking Form */
-       .booking-container {max-width: 600px; margin: 0 auto; background: #132743; padding: 35px; border-radius: 15px; border: 1px solid #1e3a5f;}
-       .form-group {margin-bottom: 18px;}
-        label {display: block; margin-bottom: 6px; color: #D4AF37; font-weight: 600; font-size: 14px;}
-        input, select, textarea {width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #1e3a5f; background: #0B1D36; color: #fff; font-size: 16px; box-sizing: border-box;}
-        input:focus, select:focus, textarea:focus {outline: none; border-color: #D4AF37;}
-       .submit-btn {width: 100%; background: #25D366; color: white; padding: 15px; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 10px;}
+        /* Booking Form - Premium */
+        .booking-container {
+            max-width: 650px; 
+            margin: 0 auto; 
+            background: linear-gradient(145deg, #132743, #0f1f35); 
+            padding: 40px; 
+            border-radius: 20px; 
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        .form-grid {display: grid; grid-template-columns: 1fr 1fr; gap: 20px;}
+        .form-group {margin-bottom: 20px;}
+        .form-group.full {grid-column: 1 / -1;}
+        label {display: block; margin-bottom: 8px; color: var(--gold); font-weight: 600; font-size: 14px;}
+        input, select, textarea {
+            width: 100%; 
+            padding: 14px 16px; 
+            border-radius: 10px; 
+            border: 1px solid rgba(212, 175, 55, 0.2); 
+            background: var(--primary); 
+            color: var(--white); 
+            font-size: 15px; 
+            font-family: 'Poppins', sans-serif;
+            transition: 0.3s;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none; 
+            border-color: var(--gold); 
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        .submit-btn {
+            width: 100%; 
+            background: var(--green); 
+            color: white; 
+            padding: 16px; 
+            border: none; 
+            border-radius: 12px; 
+            font-size: 17px; 
+            font-weight: 700; 
+            cursor: pointer; 
+            margin-top: 10px;
+            transition: 0.3s;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+        .submit-btn:hover {background: #128C7E; transform: translateY(-2px);}
         
         /* Terms */
-       .terms {background: #000; padding: 40px; border-radius: 12px; border-left: 5px solid #D4AF37;}
-       .terms h3 {color: #D4AF37; margin-bottom: 20px; font-size: 24px;}
-       .terms ul {list-style: none;}
-       .terms li {margin: 12px 0; padding-left: 25px; position: relative;}
-       .terms li:before {content: "✓"; color: #25D366; position: absolute; left: 0; font-weight: bold;}
+        .terms {
+            background: #000; 
+            padding: 50px; 
+            border-radius: 16px; 
+            border-left: 4px solid var(--gold);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        .terms h3 {color: var(--gold); margin-bottom: 24px; font-size: 28px; font-weight: 700;}
+        .terms ul {list-style: none;}
+        .terms li {margin: 14px 0; padding-left: 30px; position: relative; color: var(--gray);}
+        .terms li:before {content: "✓"; color: var(--green); position: absolute; left: 0; font-weight: bold; font-size: 18px;}
+        .terms strong {color: var(--white);}
         
         /* Footer */
-        footer {background: #000; text-align: center; padding: 40px 0; margin-top: 60px; border-top: 3px solid #D4AF37;}
+        footer {
+            background: #000; 
+            text-align: center; 
+            padding: 60px 0 30px; 
+            margin-top: 80px; 
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+        }
         
         /* WhatsApp Float */
-       .whatsapp-float {position: fixed; bottom: 25px; right: 25px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.4); z-index: 999;}
+        .whatsapp-float {
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            background: var(--green); 
+            color: white; 
+            width: 65px; 
+            height: 65px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 32px; 
+            text-decoration: none; 
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); 
+            z-index: 999;
+            transition: 0.3s;
+            animation: pulse 2s infinite;
+        }
+        .whatsapp-float:hover {transform: scale(1.1);}
+        @keyframes pulse {
+            0%, 100% {box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);}
+            50% {box-shadow: 0 8px 35px rgba(37, 211, 102, 0.8);}
+        }
         
-        /* Responsive */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-           .hero h2 {font-size: 32px;}
-           .nav {justify-content: center;}
-           .nav-links {display: none;}
-           .section-title {font-size: 28px;}
+            .hero h2 {font-size: 36px;}
+            .hero {padding: 140px 0 80px;}
+            .nav-links {display: none;}
+            .section {padding: 70px 0;}
+            .section-title {font-size: 32px;}
+            .car-grid {grid-template-columns: 1fr;}
+            .form-grid {grid-template-columns: 1fr;}
+            .booking-container {padding: 30px 20px;}
         }
     </style>
 </head>
@@ -91,11 +315,11 @@
     <div class="container nav">
         <div class="logo">
             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <defs><linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" /><stop offset="100%" style="stop-color:#B8941F;stop-opacity:1" /></linearGradient></defs>
-                <circle cx="50" cy="50" r="48" fill="#000" stroke="url(#gold)" stroke-width="3"/>
-                <text x="50" y="45" font-family="Arial" font-size="24" font-weight="bold" fill="url(#gold)" text-anchor="middle">LLRC</text>
-                <path d="M 25 65 L 35 55 L 50 65 L 65 55 L 75 65" stroke="url(#gold)" stroke-width="2" fill="none"/>
-                <circle cx="35" cy="70" r="4" fill="url(#gold)"/><circle cx="65" cy="70" r="4" fill="url(#gold)"/>
+                <defs><linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" /><stop offset="100%" style="stop-color:#B8941F;stop-opacity:1" /></linearGradient></defs>
+                <circle cx="50" cy="50" r="48" fill="#000" stroke="url(#goldGrad)" stroke-width="3"/>
+                <text x="50" y="45" font-family="Poppins" font-size="22" font-weight="800" fill="url(#goldGrad)" text-anchor="middle">LLRC</text>
+                <path d="M 25 65 L 35 55 L 50 65 L 65 55 L 75 65" stroke="url(#goldGrad)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <circle cx="35" cy="72" r="4" fill="url(#goldGrad)"/><circle cx="65" cy="72" r="4" fill="url(#goldGrad)"/>
             </svg>
             <div class="logo-text">
                 <h1>LAHORE LUXURY RENT A CAR</h1>
@@ -104,9 +328,10 @@
         </div>
         <nav class="nav-links">
             <a href="#home">Home</a>
-            <a href="#cars">Cars</a>
+            <a href="#cars">Our Fleet</a>
             <a href="#eid-offer">Eid Offer</a>
             <a href="#booking">Book Now</a>
+            <a href="#terms">Terms</a>
         </nav>
         <a href="https://wa.me/923104569041" class="call-btn">📞 03104569041</a>
     </div>
@@ -114,9 +339,9 @@
 
 <section class="hero" id="home">
     <div class="container">
-        <h2>LAHORE'S TRUSTED CAR RENTAL</h2>
+        <h2>LAHORE'S MOST TRUSTED CAR RENTAL</h2>
         <p class="tagline">Drive in Style, Arrive with Class</p>
-        <p class="subtagline">Travel Across Pakistan. One Way Or Two Way</p>
+        <p class="subtagline">Travel Across Pakistan • One Way or Two Way • 24/7 Service</p>
         <a href="#booking" class="hero-btn">Book on WhatsApp Now</a>
     </div>
 </section>
@@ -125,177 +350,91 @@
 <section class="section container" id="eid-offer">
     <div class="eid-offer">
         <div class="eid-badge">LIMITED TIME</div>
-        <h2 style="font-size: 42px; margin-bottom: 10px; color: #D4AF37; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">🌙 EID SPECIAL OFFER 🌙</h2>
-        <p style="font-size: 20px; margin-bottom: 25px;">Celebrate This Eid with Lahore Luxury Rent A Car</p>
-        <div style="background: rgba(0,0,0,0.3); padding: 25px; border-radius: 10px; max-width: 700px; margin: 0 auto 30px;">
-            <img src="images/eid-jetour-x70.jpg" alt="Eid Special Jetour X70 Plus" style="width: 100%; max-width: 500px; border-radius: 10px; margin-bottom: 20px; border: 2px solid #D4AF37;">
-            <h3 style="font-size: 30px; color: #fff; margin-bottom: 10px;">JETOUR X70 PLUS DELUXE</h3>
-            <p style="font-size: 18px; margin: 5px 0;">7 Seater | Luxury SUV | Professional Driver</p>
-            <div style="margin: 20px 0;">
-                <p style="font-size: 16px; text-decoration: line-through; color: #ffcccc;">Regular Price: Rs. 17,000/Day</p>
-                <p style="font-size: 36px; font-weight: bold; color: #D4AF37; margin: 5px 0;">EID OFFER: Rs. 15,000/Day</p>
-                <p style="font-size: 16px;">WITH DRIVER | SAVE Rs. 2,000 PER DAY!</p>
+        <h2 style="font-size: 48px; margin-bottom: 12px; color: var(--gold); font-weight: 800;">🌙 EID SPECIAL OFFER 🌙</h2>
+        <p style="font-size: 20px; margin-bottom: 32px; font-weight: 300;">Celebrate This Eid with Lahore Luxury Rent A Car</p>
+        <div style="background: rgba(0,0,0,0.4); padding: 32px; border-radius: 16px; max-width: 750px; margin: 0 auto 36px; backdrop-filter: blur(10px);">
+            <img src="images/eid-jetour-x70.jpg" alt="Eid Special Jetour X70 Plus" style="width: 100%; max-width: 550px; border-radius: 12px; margin-bottom: 24px; border: 3px solid var(--gold); box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+            <h3 style="font-size: 32px; color: #fff; margin-bottom: 12px; font-weight: 700;">JETOUR X70 PLUS DELUXE</h3>
+            <p style="font-size: 18px; margin: 8px 0; color: var(--gray);">7 Seater | Luxury SUV | Professional Driver Included</p>
+            <div style="margin: 28px 0;">
+                <p style="font-size: 16px; text-decoration: line-through; color: #ff9999; opacity: 0.7;">Regular Price: Rs. 17,000/Day</p>
+                <p style="font-size: 42px; font-weight: 800; color: var(--gold); margin: 8px 0;">EID OFFER: Rs. 15,000/Day</p>
+                <p style="font-size: 17px; font-weight: 600;">WITH DRIVER | SAVE Rs. 2,000 PER DAY!</p>
             </div>
-            <p style="font-size: 14px; color: #D4AF37; margin-top: 15px;">✅ This Offer is Available ONLY IN LAHORE</p>
-            <p style="font-size: 14px;">✅ Valid for Eid-ul-Fitr & Eid-ul-Adha 2026 Bookings</p>
+            <p style="font-size: 15px; color: var(--gold); margin-top: 20px; font-weight: 600;">✅ Available ONLY IN LAHORE</p>
+            <p style="font-size: 15px;">✅ Valid for Eid-ul-Fitr & Eid-ul-Adha 2026</p>
         </div>
-        <a href="https://wa.me/923104569041?text=Eid%20Special%20Offer%20Jetour%20X70%20Plus%20book%20karni%20hai%20Rs.15000/day%20me" style="background: #D4AF37; color: #000; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 20px; display: inline-block;">🎉 Book Eid Offer Now</a>
+        <a href="https://wa.me/923104569041?text=Assalamualaikum,%20Eid%20Special%20Offer%20Jetour%20X70%20Plus%20book%20karni%20hai%20Rs.15000/day%20me" style="background: var(--gold); color: #000; padding: 18px 48px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 18px; display: inline-block; box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);">🎉 Claim Eid Offer Now</a>
     </div>
 </section>
 
 <!-- LOW BUDGET CARS -->
 <section class="section container" id="cars">
-    <h2 class="section-title">Low Budget Friendly Cars</h2>
-    <p class="section-subtitle">Best rates for Lahore city use with or without driver</p>
+    <h2 class="section-title">Budget Friendly Fleet</h2>
+    <p class="section-subtitle">Best rates for Lahore city travel with complete comfort</p>
     <div class="car-grid">
-        <div class="car-card"><img src="images/alto.jpg" alt="Suzuki Alto"><div class="car-info"><h3>Suzuki Alto 2026 Model</h3><p>5 Seater | Petrol</p><p class="price">Rs. 5,000/Day without Driver</p><p class="price">Rs. 6,000/Day With Driver 12 Hour Duty</p><a href="https://wa.me/923104569041?text=Suzuki%20Alto%202026%20book%20karni%20hai" class="whatsapp-btn">Book This Car</a></div></div>
-        <div class="car-card"><img src="images/cultus.jpg" alt="Suzuki Cultus"><div class="car-info"><h3>Suzuki Cultus 2020+ Model</h3><p>5 Seater | Petrol</p><p class="price">Rs. 5,000/Day without Driver</p><p class="price">Rs. 6,000/Day With Driver 12 Hour Duty</p><a href="https://wa.me/923104569041?text=Suzuki%20Cultus%20book%20karni%20hai" class="whatsapp-btn">Book This Car</a></div></div>
-        <div class="car-card"><img src="images/corolla-altis.jpg" alt="Toyota Corolla Altis"><div class="car-info"><h3>Toyota Corolla Altis 1.6X 2021+</h3><p>5 Seater | Auto</p><p class="price">Rs. 6,500/Day without Driver</p><p class="price">Rs. 7,500/Day With Driver 12 Hour Duty</p><a href="https://wa.me/923104569041?text=Corolla%20Altis%20book%20karni%20hai" class="whatsapp-btn">Book This Car</a></div></div>
-        <div class="car-card"><img src="images/corolla-grande.jpg" alt="Toyota Corolla Grande"><div class="car-info"><h3>Toyota Corolla Grande 1.8 2022+</h3><p>5 Seater | Auto</p><p class="price">Rs. 8,500/Day without Driver</p><p class="price">Rs. 9,500/Day With Driver 12 Hour Duty</p><a href="https://wa.me/923104569041?text=Corolla%20Grande%20book%20karni%20hai" class="whatsapp-btn">Book This Car</a></div></div>
-        <div class="car-card"><img src="images/civic.jpg" alt="Honda Civic"><div class="car-info"><h3>Honda Civic 2020+ Model</h3><p>5 Seater | Auto</p><p class="price">Rs. 10,500/Day without Driver</p><p class="price">Rs. 11,500/Day With Driver 12 Hour Duty</p><a href="https://wa.me/923104569041?text=Honda%20Civic%20book%20karni%20hai" class="whatsapp-btn">Book This Car</a></div></div>
-        <div class="car-card"><img src="images/fortuner.jpg" alt="Toyota Fortuner"><div class="car-info"><h3>Toyota Fortuner 2020+ Model</h3><p>7 Seater | Auto | 4x4</p><p class="price">Rs. 23,000/Day without Driver</p><p class="price">Rs. 25,000/Day With Driver 12 Hour Duty</p><a href="https://wa.me/923104569041?text=Fortuner%20book%20karni%20hai" class="whatsapp-btn">Book This Car</a></div></div>
+        <div class="car-card"><img src="images/alto.jpg" alt="Suzuki Alto"><div class="car-info"><h3>Suzuki Alto 2026 Model</h3><p>5 Seater | Petrol | AC</p><p class="price">Rs. 5,000/Day Without Driver</p><p class="price">Rs. 6,000/Day With Driver 12H</p><a href="https://wa.me/923104569041?text=Suzuki%20Alto%202026%20book%20karni%20hai" class="whatsapp-btn">Book Now</a></div></div>
+        <div class="car-card"><img src="images/cultus.jpg" alt="Suzuki Cultus"><div class="car-info"><h3>Suzuki Cultus 2020+ Model</h3><p>5 Seater | Petrol | AC</p><p class="price">Rs. 5,000/Day Without Driver</p><p class="price">Rs. 6,000/Day With Driver 12H</p><a href="https://wa.me/923104569041?text=Suzuki%20Cultus%20book%20karni%20hai" class="whatsapp-btn">Book Now</a></div></div>
+        <div class="car-card"><img src="images/corolla-altis.jpg" alt="Toyota Corolla Altis"><div class="car-info"><h3>Toyota Corolla Altis 1.6X</h3><p>5 Seater | Automatic | 2021+</p><p class="price">Rs. 6,500/Day Without Driver</p><p class="price">Rs. 7,500/Day With Driver 12H</p><a href="https://wa.me/923104569041?text=Corolla%20Altis%20book%20karni%20hai" class="whatsapp-btn">Book Now</a></div></div>
+        <div class="car-card"><img src="images/corolla-grande.jpg" alt="Toyota Corolla Grande"><div class="car-info"><h3>Corolla Grande 1.8 2022+</h3><p>5 Seater | Automatic | Premium</p><p class="price">Rs. 8,500/Day Without Driver</p><p class="price">Rs. 9,500/Day With Driver 12H</p><a href="https://wa.me/923104569041?text=Corolla%20Grande%20book%20karni%20hai" class="whatsapp-btn">Book Now</a></div></div>
+        <div class="car-card"><img src="images/civic.jpg" alt="Honda Civic"><div class="car-info"><h3>Honda Civic 2020+ Model</h3><p>5 Seater | Automatic | Sporty</p><p class="price">Rs. 10,500/Day Without Driver</p><p class="price">Rs. 11,500/Day With Driver 12H</p><a href="https://wa.me/923104569041?text=Honda%20Civic%20book%20karni%20hai" class="whatsapp-btn">Book Now</a></div></div>
+        <div class="car-card"><img src="images/fortuner.jpg" alt="Toyota Fortuner"><div class="car-info"><h3>Toyota Fortuner 2020+</h3><p>7 Seater | Automatic | 4x4</p><p class="price">Rs. 23,000/Day Without Driver</p><p class="price">Rs. 25,000/Day With Driver 12H</p><a href="https://wa.me/923104569041?text=Fortuner%20book%20karni%20hai" class="whatsapp-btn">Book Now</a></div></div>
     </div>
 </section>
 
 <!-- LUXURY CARS -->
 <section class="section container">
-    <h2 class="section-title">Luxury Cars Section</h2>
-    <p class="section-subtitle">Premium SUVs for executives & special occasions in Lahore</p>
+    <h2 class="section-title">Luxury SUV Collection</h2>
+    <p class="section-subtitle">Premium SUVs for executives, weddings & special occasions</p>
     <div class="car-grid">
-        <div class="car-card"><img src="images/haval-h6.jpg" alt="Haval H6"><div class="car-info"><h3>Haval H6 - New Model</h3><p>5 Seater | Turbo | Luxury SUV</p><p class="price">Rs. 17,000/Day without Driver</p><p class="price">Rs. 19,000/Day With Driver 12 Hour Duty</p><a href="https://wa.me/923104569041?text=Haval%20H6%20book%20karni%20hai" class="whatsapp-btn">Book This Car</a></div></div>
-        <div class="car-card"><img src="images/jetour-dashing.jpg" alt="Jetour Dashing"><div class="car-info"><h3>Jetour Dashing - New Model</h3><p>5 Seater | Turbo | Futuristic</p><p class="price">Rs. 17,000/Day without Driver</p><p class="price">Rs. 19,000/Day With Driver 12 Hour Duty</p><a href="https://wa.me/923104569041?text=Jetour%20Dashing%20book%20karni%20hai" class="whatsapp-btn">Book This Car</a></div></div>
-        <div class="car-card"><img src="images/mg-hs.jpg" alt="MG HS"><div class="car-info"><h3>MG HS - New Model</h3><p>5 Seater | Turbo | Panoramic Roof</p><p class="price">Rs. 20,000/Day without Driver</p><p class="price">Rs. 22,000/Day With Driver 12 Hour Duty</p><a href="https://wa.me/923104569041?text=MG%20HS%20book%20karni%20hai" class="whatsapp-btn">Book This Car</a></div></div>
-        <div class="car-card"><img src="images/tucson.jpg" alt="Hyundai Tucson"><div class="car-info"><h3>Hyundai Tucson - New Model</h3><p>5 Seater | Turbo | Premium SUV</p><p class="price">Rs. 20,000/Day without Driver</p><p class="price">Rs. 22,000/Day With Driver 12 Hour Duty</p><a href="https://wa.me/923104569041?text=Hyundai%20Tucson%20book%20karni%20hai" class="whatsapp-btn">Book This Car</a></div></div>
+        <div class="car-card"><img src="images/haval-h6.jpg" alt="Haval H6"><div class="car-info"><h3>Haval H6 - Latest Model</h3><p>5 Seater | Turbo | Luxury SUV</p><p class="price">Rs. 17,000/Day Without Driver</p><p class="price">Rs. 19,000/Day With Driver 12H</p><a href="https://wa.me/923104569041?text=Haval%20H6%20book%20karni%20hai" class="whatsapp-btn">Book Now</a></div></div>
+        <div class="car-card"><img src="images/jetour-dashing.jpg" alt="Jetour Dashing"><div class="car-info"><h3>Jetour Dashing - New</h3><p>5 Seater | Turbo | Futuristic Design</p><p class="price">Rs. 17,000/Day Without Driver</p><p class="price">Rs. 19,000/Day With Driver 12H</p><a href="https://wa.me/923104569041?text=Jetour%20Dashing%20book%20karni%20hai" class="whatsapp-btn">Book Now</a></div></div>
+        <div class="car-card"><img src="images/mg-hs.jpg" alt="MG HS"><div class="car-info"><h3>MG HS - Latest Model</h3><p>5 Seater | Turbo | Panoramic Roof</p><p class="price">Rs. 20,000/Day Without Driver</p><p class="price">Rs. 22,000/Day With Driver 12H</p><a href="https://wa.me/923104569041?text=MG%20HS%20book%20karni%20hai" class="whatsapp-btn">Book Now</a></div></div>
+        <div class="car-card"><img src="images/tucson.jpg" alt="Hyundai Tucson"><div class="car-info"><h3>Hyundai Tucson - New</h3><p>5 Seater | Turbo | Premium SUV</p><p class="price">Rs. 20,000/Day Without Driver</p><p class="price">Rs. 22,000/Day With Driver 12H</p><a href="https://wa.me/923104569041?text=Hyundai%20Tucson%20book%20karni%20hai" class="whatsapp-btn">Book Now</a></div></div>
     </div>
 </section>
 
 <!-- 7 SEATER SUVs -->
 <section class="section container">
-    <h2 class="section-title">7 Seater SUVs Cars</h2>
-    <p class="section-subtitle">Perfect for families & groups traveling from Lahore</p>
+    <h2 class="section-title">7 Seater Family SUVs</h2>
+    <p class="section-subtitle">Spacious & comfortable for families & groups traveling from Lahore</p>
     <div class="car-grid">
-        <div class="car-card"><img src="images/brv.jpg" alt="Honda BR-V"><div class="car-info"><h3>Honda BR-V - New Model</h3><p>7 Seater | Family SUV</p><p class="price">Rs. 10,000/Day without Driver</p><p class="price">Rs. 12,000/Day With Driver 12 Hour Duty</p><a href="https://wa.me/923104569041?text=Honda%20BR-V%20book%20karni%20hai" class="whatsapp-btn">Book This Car</a></div></div>
-        <div class="car-card"><img src="images/jetour-x70.jpg" alt="Jetour X70 Plus"><div class="car-info"><h3>Jetour X70 Plus - New Model</h3><p>7 Seater | Luxury | Spacious</p><p class="price">Rs. 17,000/Day without Driver</p><p class="price">Rs. 19,000/Day With Driver 12 Hour Duty</p><a href="https://wa.me/923104569041?text=Jetour%20X70%20Plus%20book%20karni%20hai" class="whatsapp-btn">Book This Car</a></div></div>
-        <div class="car-card"><img src="images/oshan-x7.jpg" alt="Changan Oshan X7"><div class="car-info"><h3>Changan Oshan X7 - New Model</h3><p>7 Seater | Premium | Feature Loaded</p><p class="price">Rs. 17,000/Day without Driver</p><p class="price">Rs. 19,000/Day With Driver 12 Hour Duty</p><a href="https://wa.me/923104569041?text=Oshan%20X7%20book%20karni%20hai" class="whatsapp-btn">Book This Car</a></div></div>
+        <div class="car-card"><img src="images/brv.jpg" alt="Honda BR-V"><div class="car-info"><h3>Honda BR-V - New Model</h3><p>7 Seater | Family SUV | AC</p><p class="price">Rs. 10,000/Day Without Driver</p><p class="price">Rs. 12,000/Day With Driver 12H</p><a href="https://wa.me/923104569041?text=Honda%20BR-V%20book%20karni%20hai" class="whatsapp-btn">Book Now</a></div></div>
+        <div class="car-card"><img src="images/jetour-x70.jpg" alt="Jetour X70 Plus"><div class="car-info"><h3>Jetour X70 Plus - New</h3><p>7 Seater | Luxury | Spacious</p><p class="price">Rs. 17,000/Day Without Driver</p><p class="price">Rs. 19,000/Day With Driver 12H</p><a href="https://wa.me/923104569041?text=Jetour%20X70%20Plus%20book%20karni%20hai" class="whatsapp-btn">Book Now</a></div></div>
+        <div class="car-card"><img src="images/oshan-x7.jpg" alt="Changan Oshan X7"><div class="car-info"><h3>Changan Oshan X7 - New</h3><p>7 Seater | Premium | Feature Rich</p><p class="price">Rs. 17,000/Day Without Driver</p><p class="price">Rs. 19,000/Day With Driver 12H</p><a href="https://wa.me/923104569041?text=Oshan%20X7%20book%20karni%20hai" class="whatsapp-btn">Book Now</a></div></div>
     </div>
 </section>
 
 <!-- WEDDING SPECIAL -->
 <section class="section container">
     <div class="wedding">
-        <h2>WE'VE GOT THE PERFECT CAR FOR YOUR PERFECT DAY.</h2>
-        <p style="font-size: 18px; margin: 15px 0;">Our Wedding Car Hire service will take care of all the little details.</p>
-        <h3 style="margin-top: 30px; font-size: 26px;">Special Offer</h3>
-        <div style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 10px; margin-top: 20px; display: inline-block;">
-            <img src="images/land-cruiser.jpg" alt="Land Cruiser" style="width: 100%; max-width: 400px; border-radius: 10px; margin-bottom: 15px;">
-            <h4 style="font-size: 24px;">Toyota Land Cruiser LC 200/300</h4>
-            <p>7 Seater | Ultimate Luxury | Wedding Special</p>
-            <p style="font-size: 20px; font-weight: bold; margin: 10px 0;">Rs. 60,000/Day without Driver</p>
-            <p style="font-size: 20px; font-weight: bold;">Rs. 65,000/Day With Driver 12 Hour Duty</p>
-            <a href="https://wa.me/923104569041?text=Land%20Cruiser%20wedding%20ke%20liye%20book%20karni%20hai" class="hero-btn" style="margin-top: 15px; background: #000; color: #D4AF37;">Book for Wedding</a>
+        <h2>WE'VE GOT THE PERFECT CAR FOR YOUR PERFECT DAY</h2>
+        <p style="font-size: 18px; margin: 16px 0; font-weight: 300;">Our Wedding Car Hire service will take care of all the little details</p>
+        <h3 style="margin-top: 36px; font-size: 28px; font-weight: 700;">Wedding Special Offer</h3>
+        <div style="background: rgba(0,0,0,0.15); padding: 28px; border-radius: 16px; margin-top: 24px; display: inline-block; max-width: 500px;">
+            <img src="images/land-cruiser.jpg" alt="Land Cruiser" style="width: 100%; max-width: 450px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <h4 style="font-size: 26px; font-weight: 700;">Toyota Land Cruiser LC 200/300</h4>
+            <p style="margin: 12px 0; font-size: 16px;">7 Seater | Ultimate Luxury | Wedding Decorated</p>
+            <p style="font-size: 22px; font-weight: 700; margin: 12px 0;">Rs. 60,000/Day Without Driver</p>
+            <p style="font-size: 22px; font-weight: 700;">Rs. 65,000/Day With Driver 12H</p>
+            <a href="https://wa.me/923104569041?text=Land%20Cruiser%20wedding%20ke%20liye%20book%20karni%20hai" class="hero-btn" style="margin-top: 20px; background: #000; color: var(--gold);">Book for Wedding</a>
         </div>
     </div>
 </section>
 
-<!-- BOOKING SYSTEM -->
+<!-- BOOKING SYSTEM - 100% WORKING -->
 <section class="section container" id="booking">
     <h2 class="section-title">Instant Booking System</h2>
-    <p class="section-subtitle">Fill form aur WhatsApp pe direct booking bhejein</p>
-    <p style="text-align:center; color:#D4AF37; margin-bottom:25px; font-weight:bold;">✅ Only for Lahore Residents - CNIC Address Required</p>
+    <p class="section-subtitle">Fill the form below & send directly to our WhatsApp</p>
+    <p style="text-align:center; color:var(--gold); margin-bottom:32px; font-weight:600; font-size: 15px;">✅ Only for Lahore Residents – CNIC Address Required</p>
     
     <div class="booking-container">
-        <form id="bookingForm">
-            <div class="form-group"><label>Full Name *</label><input type="text" id="name" placeholder="Apna naam likhen" required></div>
-            <div class="form-group"><label>Phone / WhatsApp Number *</label><input type="tel" id="phone" placeholder="03XX-XXXXXXX" required></div>
-            <div class="form-group">
-                <label>Car Select Karein *</label>
-                <select id="car" required>
-                    <option value="">-- Car Choose Karein --</option>
-                    <optgroup label="Low Budget Friendly Cars">
-                        <option>Suzuki Alto 2026</option><option>Suzuki Cultus 2020+</option><option>Toyota Corolla Altis 1.6X 2021+</option>
-                        <option>Toyota Corolla Grande 1.8 2022+</option><option>Honda Civic 2020+</option><option>Toyota Fortuner 2020+</option>
-                    </optgroup>
-                    <optgroup label="Luxury Cars">
-                        <option>Haval H6 New Model</option><option>Jetour Dashing New Model</option><option>MG HS New Model</option><option>Hyundai Tucson New Model</option>
-                    </optgroup>
-                    <optgroup label="7 Seater SUVs">
-                        <option>Honda BR-V New Model</option><option>Jetour X70 Plus New Model</option><option>Changan Oshan X7 New Model</option>
-                    </optgroup>
-                    <optgroup label="Wedding Special"><option>Toyota Land Cruiser LC200/300</option></optgroup>
-                    <optgroup label="Eid Special"><option>Jetour X70 Plus - Eid Offer Rs.15,000</option></optgroup>
-                </select>
+        <form id="bookingForm" onsubmit="return false;">
+            <div class="form-grid">
+                <div class="form-group"><label>Full Name *</label><input type="text" id="name" placeholder="Apna naam likhen" required></div>
+                <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" id="phone" placeholder="03XX-XXXXXXX" required></div>
             </div>
-            <div class="form-group"><label>With Driver ya Without Driver? *</label><select id="driver" required><option value="">-- Select Karein --</option><option>With Driver - 12 Hour Duty</option><option>Without Driver</option></select></div>
-            <div class="form-group"><label>Kitne Din Ke Liye? *</label><input type="number" id="days" min="1" placeholder="e.g. 3" required></div>
-            <div class="form-group"><label>Pickup Date *</label><input type="date" id="date" required></div>
-            <div class="form-group"><label>Pickup Time *</label><input type="time" id="time" required></div>
-            <div class="form-group"><label>Trip Type *</label><select id="trip" required><option value="">-- Select Karein --</option><option>Within Lahore City</option><option>One Way Out of City</option><option>Two Way Out of City</option></select></div>
-            <div class="form-group"><label>Message / Special Request</label><textarea id="message" placeholder="Airport pickup, wedding decoration, etc." rows="3"></textarea></div>
-            <button type="button" class="submit-btn" onclick="sendToWhatsApp()">💬 Send Booking on WhatsApp</button>
-        </form>
-    </div>
-</section>
-
-<!-- TERMS -->
-<section class="section container">
-    <div class="terms">
-        <h3>Terms & Conditions - Important Please Read</h3>
-        <ul>
-            <li><strong>Service Area:</strong> Hum sirf Lahore ke shehriyon ko gari dete hain. CNIC pe Lahore ka address ya Lahore me mustakil rehaish laazmi hai.</li>
-            <li><strong>Required Documents:</strong> Original CNIC zaruri hai. License ki copy bhi le lete hain.</li>
-            <li><strong>Advance Payment:</strong> 20% advance pe booking confirm hogi. Baqaya raqam car lete waqt.</li>
-            <li><strong>KM Policy:</strong> Koi daily km ki limit nahi hai. Lahore se 200 KM se zyada door jana ho to pehle inform karna zaruri hai.</li>
-            <li><strong>Fuel Policy - Without Driver:</strong> Car full tank ke saath milegi, full tank wapis karni hogi.</li>
-            <li><strong>Fuel Policy - With Driver (2 Way Trip):</strong> Full tank di jayegi, full tank li jayegi.</li>
-            <li><strong>Fuel Policy - With Driver (One Way Trip):</strong> Jitna petrol Lahore se destination tak lagega + jitna wapis Lahore aane me lagega + toll taxes, ye sab customer pay karega.</li>
-            <li><strong>Driver Duty:</strong> With driver booking 12 ghante ki hoti hai. Extra hours ke charges alag.</li>
-        </ul>
-    </div>
-</section>
-
-<!-- MAP -->
-<section class="section container" style="text-align: center;">
-    <h2 class="section-title">Visit Our Office in Lahore</h2>
-    <p style="margin-bottom: 30px;">24/7 Available for Bookings & Inquiries</p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217759.48983392344!2d74.194305!3d31.520369999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23abe6ccc7e4a33!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" width="100%" height="400" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"></iframe>
-</section>
-
-<footer>
-    <div class="container">
-        <h3 style="color: #D4AF37; margin-bottom: 15px;">LAHORE LUXURY RENT A CAR</h3>
-        <p>Drive in Style, Arrive with Class | Travel Across Pakistan. One Way Or Two Way</p>
-        <p style="margin: 20px 0; font-size: 20px;">
-            <a href="tel:03104569041" style="color: #25D366; text-decoration: none; font-weight: bold;">📞 Call: 03104569041</a> | 
-            <a href="https://wa.me/923104569041" style="color: #25D366; text-decoration: none; font-weight: bold;">💬 WhatsApp</a>
-        </p>
-        <p style="color: #888; font-size: 14px; margin-top: 30px;">© 2026 Lahore Luxury Rent A Car. All Rights Reserved. | Serving Lahore with Pride</p>
-    </div>
-</footer>
-
-<a href="https://wa.me/923104569041" class="whatsapp-float">💬</a>
-
-<script>
-function sendToWhatsApp() {
-    let name = document.getElementById('name').value;
-    let phone = document.getElementById('phone').value;
-    let car = document.getElementById('car').value;
-    let driver = document.getElementById('driver').value;
-    let days = document.getElementById('days').value;
-    let date = document.getElementById('date').value;
-    let time = document.getElementById('time').value;
-    let trip = document.getElementById('trip').value;
-    let message = document.getElementById('message').value;
-
-    if (!name ||!phone ||!car ||!driver ||!days ||!date ||!time ||!trip) {
-        alert('Please sari * wali fields fill karein');
-        return;
-    }
-
-    let whatsappMessage = `*New Car Booking - Lahore Luxury Rent A Car*%0A%0A` +
-        `*Name:* ${name}%0A` +
-        `*Phone:* ${phone}%0A` +
-        `*Car:* ${car}%0A` +
-        `*Driver:* ${driver}%0A` +
-        `*Days:* ${days} Day(s)%0A` +
-        `*Pickup Date:* ${date}%0A` +
-        `*Pickup
+            
+            <div class="form-group full">
+                <label>Select Car *</label>
+               
