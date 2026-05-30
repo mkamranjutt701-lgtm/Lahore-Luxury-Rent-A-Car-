@@ -1,339 +1,470 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lahore Rent A Car</title>
-
+<title>Jutt Brothers Electronics</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
-body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#0f0f0f;
-    color:white;
-}
-
-/* HEADER */
-header{
-    background: linear-gradient(135deg, #000, #1a1a1a);
-    padding:20px;
-    text-align:center;
-    position:relative;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    font-size:22px;
-    font-weight:bold;
-    color:#f5c542;
-}
-
-.tagline{
-    font-size:13px;
-    color:#ccc;
-    margin-top:5px;
-}
-
-/* CONTACT */
-.contact{
-    text-align:center;
-    padding:10px;
-}
-.contact a{
-    display:inline-block;
-    margin:5px;
-    padding:10px 15px;
-    border-radius:5px;
-    text-decoration:none;
-    color:white;
-}
-.call{background:#007bff;}
-.wa{background:#25D366;}
-
-/* CONTAINER */
-.container{
-    padding:15px;
-}
-
-/* SECTION TITLE */
-.section-title{
-    background:#1f1f1f;
-    padding:10px;
-    margin-top:20px;
-    border-left:5px solid #f5c542;
-    font-weight:bold;
-}
-
-/* CAR CARD */
-.car{
-    background:#181818;
-    margin:10px 0;
-    padding:15px;
-    border-radius:10px;
-    display:flex;
-    gap:15px;
-    align-items:center;
-}
-
-.car svg{
-    width:90px;
-    height:60px;
-    flex-shrink:0;
-}
-
-.price{
-    color:#00ff88;
-    font-weight:bold;
-    font-size:13px;
-}
-
-/* BOOKING */
-form{
-    background:#1a1a1a;
-    padding:15px;
-    border-radius:10px;
-    margin-top:20px;
-}
-
-input, select, textarea{
-    width:100%;
-    margin:5px 0;
-    padding:10px;
-    border:none;
-    border-radius:5px;
-}
-
-button{
-    width:100%;
-    padding:12px;
-    background:#f5c542;
-    border:none;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* WEDDING */
-.wedding{
-    background:#111;
-    padding:15px;
-    border-radius:10px;
-    border:1px solid #333;
-    margin-top:15px;
-}
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
+    body { font-family: 'Noto Nastaliq Urdu', sans-serif; }
+   .hidden { display: none; }
+    @media print {.no-print { display: none; } }
 </style>
 </head>
+<body class="bg-gray-100">
 
-<body>
-
-<header>
-    <div class="logo">
-        🚗 Lahore Rent A Car
+<!-- LOGIN SCREEN -->
+<div id="loginScreen" class="min-h-screen flex items-center justify-center bg-blue-900">
+    <div class="bg-white p-8 rounded-lg shadow-2xl w-96 text-center">
+        <h1 class="text-3xl font-bold text-blue-900 mb-2">Jutt Brothers Electronics</h1>
+        <p class="text-gray-600 mb-6">03104569041</p>
+        <input type="password" id="pinInput" placeholder="PIN Code Daalein" class="w-full p-3 border rounded-lg text-center text-2xl mb-4" maxlength="4">
+        <button onclick="checkPin()" class="w-full bg-blue-600 text-white p-3 rounded-lg font-bold hover:bg-blue-700">Login</button>
+        <p id="pinError" class="text-red-500 mt-2 hidden">Ghalat PIN</p>
     </div>
-    <div class="tagline">
-        Travel Across Pakistan. One Way Or Two Way
+</div>
+
+<!-- MAIN APP -->
+<div id="mainApp" class="hidden">
+    <!-- HEADER -->
+    <div class="bg-blue-900 text-white p-4 no-print">
+        <div class="flex justify-between items-center max-w-7xl mx-auto">
+            <div>
+                <h1 class="text-2xl font-bold">Jutt Brothers Electronics</h1>
+                <p class="text-sm">Main Branch | 03104569041</p>
+            </div>
+            <button onclick="logout()" class="bg-red-600 px-4 py-2 rounded">Logout</button>
+        </div>
     </div>
-</header>
 
-<div class="contact">
-    <a class="call" href="tel:03104569041">📞 Call</a>
-    <a class="wa" href="https://wa.me/923104569041">💬 WhatsApp</a>
-    <p>📍 Lahore Only Service</p>
-</div>
+    <!-- NAV -->
+    <div class="bg-white shadow no-print">
+        <div class="max-w-7xl mx-auto flex overflow-x-auto">
+            <button onclick="showTab('home')" class="tab-btn px-6 py-3 font-bold border-b-4 border-blue-600">Home</button>
+            <button onclick="showTab('customer')" class="tab-btn px-6 py-3">Customer</button>
+            <button onclick="showTab('payment')" class="tab-btn px-6 py-3">Jama</button>
+            <button onclick="showTab('stock')" class="tab-btn px-6 py-3">Stock</button>
+            <button onclick="showTab('expense')" class="tab-btn px-6 py-3">Kharcha</button>
+            <button onclick="showTab('reports')" class="tab-btn px-6 py-3">Reports</button>
+        </div>
+    </div>
 
-<div class="container">
+    <!-- HOME TAB -->
+    <div id="homeTab" class="tab-content p-4 max-w-7xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            <div class="bg-white p-4 rounded-lg shadow">
+                <p class="text-gray-600 text-sm">Aaj Due</p>
+                <p class="text-2xl font-bold text-red-600" id="aajDue">Rs. 0</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+                <p class="text-gray-600 text-sm">Stock Value</p>
+                <p class="text-2xl font-bold text-blue-600" id="stockValue">Rs. 0</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+                <p class="text-gray-600 text-sm">Total Customer</p>
+                <p class="text-2xl font-bold" id="totalCustomer">0</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+                <p class="text-gray-600 text-sm">Total Baqaya</p>
+                <p class="text-2xl font-bold text-orange-600" id="totalBaqaya">Rs. 0</p>
+            </div>
+        </div>
 
-<!-- LOW BUDGET -->
-<div class="section-title">Low Budget Friendly Cars</div>
+        <div class="bg-white p-4 rounded-lg shadow">
+            <h2 class="font-bold text-xl mb-4">Aaj Due Customers</h2>
+            <div id="dueList"></div>
+        </div>
+    </div>
 
-<div class="car">
-<svg viewBox="0 0 100 60"><rect width="100" height="60" fill="#444"/></svg>
-<div>
-Suzuki Alto 2026 - 5 Seater<br>
-<span class="price">Rs. 5000/day (Without Driver) | Rs. 6000/day (With Driver)</span>
-</div>
-</div>
+    <!-- CUSTOMER TAB -->
+    <div id="customerTab" class="tab-content p-4 max-w-7xl mx-auto hidden">
+        <div class="bg-white p-4 rounded-lg shadow mb-4">
+            <h2 class="font-bold text-xl mb-4">Naya Customer Add Karein</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <input id="c_name" placeholder="Name" class="p-2 border rounded">
+                <input id="c_mobile" placeholder="Mobile 03XXXXXXXXX" class="p-2 border rounded">
+                <input id="c_cnic" placeholder="CNIC" class="p-2 border rounded">
+                <input id="c_address" placeholder="Full Address" class="p-2 border rounded">
+                <select id="c_area" class="p-2 border rounded">
+                    <option>Area Select Karein</option>
+                    <option>Johar Town</option><option>DHA Phase 1</option><option>DHA Phase 2</option>
+                    <option>DHA Phase 3</option><option>DHA Phase 4</option><option>DHA Phase 5</option>
+                    <option>Gulberg 1</option><option>Gulberg 2</option><option>Gulberg 3</option>
+                    <option>Model Town</option><option>Faisal Town</option><option>Wapda Town</option>
+                    <option>Iqbal Town</option><option>Sabzazar</option><option>Township</option>
+                    <option>Bahria Town</option><option>Lake City</option><option>Valencia</option>
+                </select>
+                <input id="c_model" placeholder="Product Model" class="p-2 border rounded">
+                <input id="c_imei" placeholder="IMEI/Serial" class="p-2 border rounded">
+                <input id="c_purchase" type="number" placeholder="Purchase Price" class="p-2 border rounded">
+                <input id="c_markup" type="number" placeholder="Markup/Profit" class="p-2 border rounded">
+                <input id="c_advance" type="number" placeholder="Advance" class="p-2 border rounded">
+                <input id="c_qist" type="number" placeholder="Qist Amount" class="p-2 border rounded">
+                <input id="g1_name" placeholder="Guarantor 1 Name" class="p-2 border rounded">
+                <input id="g1_mobile" placeholder="Guarantor 1 Mobile" class="p-2 border rounded">
+            </div>
+            <button onclick="addCustomer()" class="mt-4 bg-green-600 text-white px-6 py-2 rounded font-bold">Customer Save Karein</button>
+        </div>
 
-<div class="car">
-<svg viewBox="0 0 100 60"><rect width="100" height="60" fill="#555"/></svg>
-<div>
-Suzuki Cultus 2020+ - 5 Seater<br>
-<span class="price">Rs. 5000/day | Rs. 6000/day</span>
-</div>
-</div>
+        <div class="bg-white p-4 rounded-lg shadow">
+            <input id="searchCustomer" onkeyup="searchCustomer()" placeholder="Search: Name ya Mobile" class="w-full p-3 border rounded mb-4">
+            <div id="customerList"></div>
+        </div>
+    </div>
 
-<div class="car">
-<svg viewBox="0 0 100 60"><rect width="100" height="60" fill="#666"/></svg>
-<div>
-Toyota Corolla Altis 1.6X<br>
-<span class="price">Rs. 6500/day | Rs. 7500/day</span>
-</div>
-</div>
+    <!-- PAYMENT TAB -->
+    <div id="paymentTab" class="tab-content p-4 max-w-7xl mx-auto hidden">
+        <div class="bg-white p-4 rounded-lg shadow">
+            <h2 class="font-bold text-xl mb-4">Qist Jama Karein</h2>
+            <select id="pay_customer" class="w-full p-2 border rounded mb-2" onchange="loadCustomerDue()"></select>
+            <p class="mb-2">Baqaya: <span id="pay_baqaya" class="font-bold">Rs. 0</span></p>
+            <input id="pay_amount" type="number" placeholder="Amount Jama" class="w-full p-2 border rounded mb-2">
+            <select id="pay_method" class="w-full p-2 border rounded mb-2">
+                <option>Cash</option><option>JazzCash</option><option>Bank Transfer</option>
+            </select>
+            <button onclick="addPayment()" class="w-full bg-blue-600 text-white p-3 rounded font-bold">Jama Karo + Receipt</button>
+            <div id="receiptDiv" class="hidden mt-4 p-4 border-2 border-dashed"></div>
+        </div>
+    </div>
 
-<div class="car">
-<svg viewBox="0 0 100 60"><rect width="100" height="60" fill="#777"/></svg>
-<div>
-Toyota Corolla Grande 1.8<br>
-<span class="price">Rs. 8500/day | Rs. 9500/day</span>
-</div>
-</div>
+    <!-- STOCK TAB -->
+    <div id="stockTab" class="tab-content p-4 max-w-7xl mx-auto hidden">
+        <div class="bg-white p-4 rounded-lg shadow mb-4">
+            <h2 class="font-bold text-xl mb-4">Stock Add Karein</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <input id="s_model" placeholder="Model" class="p-2 border rounded">
+                <input id="s_imei" placeholder="IMEI/Serial" class="p-2 border rounded">
+                <input id="s_purchase" type="number" placeholder="Purchase Price" class="p-2 border rounded">
+                <select id="s_type" class="p-2 border rounded">
+                    <option>Mobile</option><option>Bike</option><option>LED</option><option>Other</option>
+                </select>
+            </div>
+            <button onclick="addStock()" class="mt-4 bg-green-600 text-white px-6 py-2 rounded">Stock Add Karein</button>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+            <h2 class="font-bold text-xl mb-4">In Stock Items</h2>
+            <div id="stockList"></div>
+        </div>
+    </div>
 
-<div class="car">
-<svg viewBox="0 0 100 60"><rect width="100" height="60" fill="#888"/></svg>
-<div>
-Honda Civic 2020+<br>
-<span class="price">Rs. 10500/day | Rs. 11500/day</span>
-</div>
-</div>
+    <!-- EXPENSE TAB -->
+    <div id="expenseTab" class="tab-content p-4 max-w-7xl mx-auto hidden">
+        <div class="bg-white p-4 rounded-lg shadow mb-4">
+            <h2 class="font-bold text-xl mb-4">Kharcha Add Karein</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <select id="e_category" class="p-2 border rounded">
+                    <option>Rent</option><option>Bijli</option><option>Salary Base</option>
+                    <option>Bonus/Incentive</option><option>Owner Draw</option><option>Purchase</option><option>Variable</option>
+                </select>
+                <input id="e_details" placeholder="Details" class="p-2 border rounded">
+                <input id="e_amount" type="number" placeholder="Amount" class="p-2 border rounded">
+                <input id="e_paidto" placeholder="Kisko Diya" class="p-2 border rounded">
+            </div>
+            <button onclick="addExpense()" class="mt-4 bg-red-600 text-white px-6 py-2 rounded">Kharcha Save</button>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+            <h2 class="font-bold text-xl mb-4">Is Mahine Ka Kharcha</h2>
+            <div id="expenseList"></div>
+        </div>
+    </div>
 
-<div class="car">
-<svg viewBox="0 0 100 60"><rect width="100" height="60" fill="#999"/></svg>
-<div>
-Toyota Fortuner<br>
-<span class="price">Rs. 23000/day | Rs. 25000/day</span>
-</div>
-</div>
-
-<!-- LUXURY -->
-<div class="section-title">Luxury Cars Section</div>
-
-<div class="car">
-<svg viewBox="0 0 100 60"><rect width="100" height="60" fill="#2a2a2a"/></svg>
-<div>
-Haval H6<br>
-<span class="price">Rs. 17000/day | Rs. 19000/day</span>
-</div>
-</div>
-
-<div class="car">
-<svg viewBox="0 0 100 60"><rect width="100" height="60" fill="#333"/></svg>
-<div>
-Jetour Dashing<br>
-<span class="price">Rs. 17000/day | Rs. 19000/day</span>
-</div>
-</div>
-
-<div class="car">
-<svg viewBox="0 0 100 60"><rect width="100" height="60" fill="#444"/></svg>
-<div>
-MG HS<br>
-<span class="price">Rs. 20000/day | Rs. 22000/day</span>
-</div>
-</div>
-
-<div class="car">
-<svg viewBox="0 0 100 60"><rect width="100" height="60" fill="#555"/></svg>
-<div>
-Hyundai Tucson<br>
-<span class="price">Rs. 20000/day | Rs. 22000/day</span>
-</div>
-</div>
-
-<!-- SUVs -->
-<div class="section-title">7 Seater SUVs Cars</div>
-
-<div class="car">
-<svg viewBox="0 0 100 60"><rect width="100" height="60" fill="#666"/></svg>
-<div>
-Honda BR-V<br>
-<span class="price">Rs. 10000/day | Rs. 12000/day</span>
-</div>
-</div>
-
-<div class="car">
-<svg viewBox="0 0 100 60"><rect width="100" height="60" fill="#777"/></svg>
-<div>
-Jetour X70 Plus<br>
-<span class="price">Rs. 17000/day | Rs. 19000/day</span>
-</div>
-</div>
-
-<div class="car">
-<svg viewBox="0 0 100 60"><rect width="100" height="60" fill="#888"/></svg>
-<div>
-Changan Oshan X7<br>
-<span class="price">Rs. 17000/day | Rs. 19000/day</span>
-</div>
-</div>
-
-<!-- WEDDING -->
-<div class="section-title">Wedding Cars</div>
-
-<div class="wedding">
-<b>WE'VE GOT THE PERFECT CAR FOR YOUR PERFECT DAY.</b><br><br>
-
-Toyota Land Cruiser (LC 200 & 300)<br>
-<span class="price">Rs. 60000/day | Rs. 65000/day</span>
-</div>
-
-<!-- RULES -->
-<div class="section-title">Terms & Conditions</div>
-<p>
-✔ CNIC required<br>
-✔ Lahore residents only (address verification)<br>
-✔ 20% advance payment<br>
-✔ 200 KM limit (inform before travel beyond Lahore)<br>
-✔ Fuel Policy: Full tank pickup & full return (with/without driver)<br>
-✔ One way: fuel + toll paid by customer<br>
-</p>
-
-<!-- BOOKING -->
-<div class="section-title">Booking System</div>
-
-<form onsubmit="sendWhatsApp(); return false;">
-<input id="name" placeholder="Your Name" required>
-<input id="phone" placeholder="Phone Number" required>
-<input id="cnic" placeholder="CNIC Number" required>
-
-<select id="car">
-<option>Select Car</option>
-<option>Alto</option>
-<option>Cultus</option>
-<option>Corolla Altis</option>
-<option>Corolla Grande</option>
-<option>Civic</option>
-<option>Fortuner</option>
-<option>Haval H6</option>
-<option>Jetour Dashing</option>
-<option>MG HS</option>
-<option>Tucson</option>
-<option>BR-V</option>
-<option>X70 Plus</option>
-<option>Oshan X7</option>
-<option>Land Cruiser</option>
-</select>
-
-<input id="days" placeholder="Days Required">
-<textarea id="msg" placeholder="Pickup location / details"></textarea>
-
-<button type="submit">Send Booking on WhatsApp</button>
-</form>
-
+    <!-- REPORTS TAB -->
+    <div id="reportsTab" class="tab-content p-4 max-w-7xl mx-auto hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-white p-4 rounded-lg shadow">
+                <h2 class="font-bold text-xl mb-4">Monthly Slip Generator</h2>
+                <select id="slip_customer" class="w-full p-2 border rounded mb-2"></select>
+                <button onclick="generateSlip()" class="w-full bg-purple-600 text-white p-2 rounded mb-2">Single Slip Banao</button>
+                <button onclick="generateAllSlips()" class="w-full bg-purple-800 text-white p-2 rounded">Saare Customers Ki Slip</button>
+                <div id="slipDiv" class="mt-4"></div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+                <h2 class="font-bold text-xl mb-4">Defaulter SMS List</h2>
+                <button onclick="generateDefaulter()" class="w-full bg-red-600 text-white p-2 rounded mb-2">List Banao</button>
+                <textarea id="defaulterList" class="w-full h-64 p-2 border rounded" readonly></textarea>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
-function sendWhatsApp(){
-let name=document.getElementById("name").value;
-let phone=document.getElementById("phone").value;
-let cnic=document.getElementById("cnic").value;
-let car=document.getElementById("car").value;
-let days=document.getElementById("days").value;
-let msg=document.getElementById("msg").value;
+const PIN = "1225";
+let db = {
+    customers: JSON.parse(localStorage.getItem('jbe_customers') || '[]'),
+    payments: JSON.parse(localStorage.getItem('jbe_payments') || '[]'),
+    stock: JSON.parse(localStorage.getItem('jbe_stock') || '[]'),
+    expenses: JSON.parse(localStorage.getItem('jbe_expenses') || '[]')
+};
 
-let text=
-`New Booking Request%0A
-Name: ${name}%0A
-Phone: ${phone}%0A
-CNIC: ${cnic}%0A
-Car: ${car}%0A
-Days: ${days}%0A
-Details: ${msg}`;
-
-window.open("https://wa.me/923104569041?text="+text);
+function saveDB() {
+    localStorage.setItem('jbe_customers', JSON.stringify(db.customers));
+    localStorage.setItem('jbe_payments', JSON.stringify(db.payments));
+    localStorage.setItem('jbe_stock', JSON.stringify(db.stock));
+    localStorage.setItem('jbe_expenses', JSON.stringify(db.expenses));
 }
-</script>
 
+function checkPin() {
+    if(document.getElementById('pinInput').value === PIN) {
+        document.getElementById('loginScreen').classList.add('hidden');
+        document.getElementById('mainApp').classList.remove('hidden');
+        loadDashboard();
+        loadCustomers();
+        loadStock();
+    } else {
+        document.getElementById('pinError').classList.remove('hidden');
+    }
+}
+
+function logout() {
+    location.reload();
+}
+
+function showTab(tab) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.add('hidden'));
+    document.getElementById(tab + 'Tab').classList.remove('hidden');
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('border-blue-600'));
+    event.target.classList.add('border-blue-600');
+}
+
+function addCustomer() {
+    const customer = {
+        id: 'C' + Date.now(),
+        date: new Date().toISOString().split('T')[0],
+        name: document.getElementById('c_name').value,
+        mobile: document.getElementById('c_mobile').value,
+        cnic: document.getElementById('c_cnic').value,
+        address: document.getElementById('c_address').value,
+        area: document.getElementById('c_area').value,
+        model: document.getElementById('c_model').value,
+        imei: document.getElementById('c_imei').value,
+        purchase: parseInt(document.getElementById('c_purchase').value),
+        markup: parseInt(document.getElementById('c_markup').value),
+        sale: parseInt(document.getElementById('c_purchase').value) + parseInt(document.getElementById('c_markup').value),
+        advance: parseInt(document.getElementById('c_advance').value),
+        qist: parseInt(document.getElementById('c_qist').value),
+        g1_name: document.getElementById('g1_name').value,
+        g1_mobile: document.getElementById('g1_mobile').value,
+        total_months: Math.ceil((parseInt(document.getElementById('c_purchase').value) + parseInt(document.getElementById('c_markup').value) - parseInt(document.getElementById('c_advance').value)) / parseInt(document.getElementById('c_qist').value))
+    };
+    db.customers.push(customer);
+    saveDB();
+    alert('Customer Add Ho Gaya!');
+    loadCustomers();
+    loadDashboard();
+    document.querySelectorAll('#customerTab input').forEach(i => i.value = '');
+}
+
+function loadCustomers() {
+    const list = document.getElementById('customerList');
+    const select = document.getElementById('pay_customer');
+    const slipSelect = document.getElementById('slip_customer');
+    list.innerHTML = '';
+    select.innerHTML = '<option>Customer Select Karein</option>';
+    slipSelect.innerHTML = '<option>Customer Select Karein</option>';
+
+    db.customers.forEach(c => {
+        const paid = db.payments.filter(p => p.customer_id === c.id).reduce((sum, p) => sum + p.amount, 0);
+        const baqaya = c.sale - c.advance - paid;
+        list.innerHTML += `
+            <div class="border-b p-3 flex justify-between items-center">
+                <div>
+                    <p class="font-bold">${c.name} - ${c.mobile}</p>
+                    <p class="text-sm text-gray-600">${c.model} | ${c.area} | Baqaya: Rs. ${baqaya}</p>
+                </div>
+                <button onclick="whatsappCustomer('${c.mobile}','${c.name}',${baqaya})" class="bg-green-500 text-white px-3 py-1 rounded text-sm">WhatsApp</button>
+            </div>
+        `;
+        select.innerHTML += `<option value="${c.id}">${c.name} - ${c.mobile}</option>`;
+        slipSelect.innerHTML += `<option value="${c.id}">${c.name} - ${c.mobile}</option>`;
+    });
+}
+
+function searchCustomer() {
+    const term = document.getElementById('searchCustomer').value.toLowerCase();
+    document.querySelectorAll('#customerList > div').forEach(div => {
+        div.style.display = div.textContent.toLowerCase().includes(term)? 'flex' : 'none';
+    });
+}
+
+function loadCustomerDue() {
+    const cid = document.getElementById('pay_customer').value;
+    const c = db.customers.find(x => x.id === cid);
+    if(c) {
+        const paid = db.payments.filter(p => p.customer_id === cid).reduce((sum, p) => sum + p.amount, 0);
+        document.getElementById('pay_baqaya').textContent = 'Rs. ' + (c.sale - c.advance - paid);
+    }
+}
+
+function addPayment() {
+    const payment = {
+        id: 'P' + Date.now(),
+        date: new Date().toISOString().split('T')[0],
+        customer_id: document.getElementById('pay_customer').value,
+        amount: parseInt(document.getElementById('pay_amount').value),
+        method: document.getElementById('pay_method').value
+    };
+    db.payments.push(payment);
+    saveDB();
+    const c = db.customers.find(x => x.id === payment.customer_id);
+    document.getElementById('receiptDiv').classList.remove('hidden');
+    document.getElementById('receiptDiv').innerHTML = `
+        <h3 class="font-bold text-center text-xl">JUTT BROTHERS ELECTRONICS</h3>
+        <p class="text-center text-sm">03104569041</p>
+        <hr class="my-2">
+        <p>Date: ${payment.date}</p>
+        <p>Customer: ${c.name}</p>
+        <p>Mobile: ${c.mobile}</p>
+        <p>Amount Received: Rs. ${payment.amount}</p>
+        <p>Method: ${payment.method}</p>
+        <hr class="my-2">
+        <p class="text-center text-sm">Thank You!</p>
+    `;
+    loadDashboard();
+}
+
+function addStock() {
+    const item = {
+        id: 'S' + Date.now(),
+        date: new Date().toISOString().split('T')[0],
+        model: document.getElementById('s_model').value,
+        imei: document.getElementById('s_imei').value,
+        purchase: parseInt(document.getElementById('s_purchase').value),
+        type: document.getElementById('s_type').value,
+        status: 'In Stock'
+    };
+    db.stock.push(item);
+    saveDB();
+    alert('Stock Add Ho Gaya');
+    loadStock();
+    loadDashboard();
+    document.querySelectorAll('#stockTab input').forEach(i => i.value = '');
+}
+
+function loadStock() {
+    const list = document.getElementById('stockList');
+    list.innerHTML = '';
+    db.stock.filter(s => s.status === 'In Stock').forEach(s => {
+        list.innerHTML += `<div class="border-b p-2">${s.model} - ${s.imei} - Rs. ${s.purchase}</div>`;
+    });
+}
+
+function addExpense() {
+    const exp = {
+        id: 'E' + Date.now(),
+        date: new Date().toISOString().split('T')[0],
+        category: document.getElementById('e_category').value,
+        details: document.getElementById('e_details').value,
+        amount: parseInt(document.getElementById('e_amount').value),
+        paidto: document.getElementById('e_paidto').value
+    };
+    db.expenses.push(exp);
+    saveDB();
+    alert('Kharcha Save Ho Gaya');
+    loadExpenses();
+    document.querySelectorAll('#expenseTab input').forEach(i => i.value = '');
+}
+
+function loadExpenses() {
+    const list = document.getElementById('expenseList');
+    const thisMonth = new Date().toISOString().slice(0,7);
+    list.innerHTML = '';
+    db.expenses.filter(e => e.date.startsWith(thisMonth)).forEach(e => {
+        list.innerHTML += `<div class="border-b p-2 flex justify-between"><span>${e.category} - ${e.details}</span><span class="font-bold">Rs. ${e.amount}</span></div>`;
+    });
+}
+
+function loadDashboard() {
+    document.getElementById('totalCustomer').textContent = db.customers.length;
+    document.getElementById('stockValue').textContent = 'Rs. ' + db.stock.filter(s => s.status === 'In Stock').reduce((sum, s) => sum + s.purchase, 0);
+
+    let totalBaqaya = 0;
+    db.customers.forEach(c => {
+        const paid = db.payments.filter(p => p.customer_id === c.id).reduce((sum, p) => sum + p.amount, 0);
+        totalBaqaya += (c.sale - c.advance - paid);
+    });
+    document.getElementById('totalBaqaya').textContent = 'Rs. ' + totalBaqaya;
+}
+
+function whatsappCustomer(mobile, name, baqaya) {
+    const msg = `Salam ${name} Bhai,%0AJutt Brothers Electronics se%0AApka baqaya: Rs. ${baqaya}%0AJazzCash: 03104569041%0AShukriya`;
+    window.open(`https://wa.me/92${mobile.substring(1)}?text=${msg}`);
+}
+
+function generateSlip() {
+    const cid = document.getElementById('slip_customer').value;
+    const c = db.customers.find(x => x.id === cid);
+    if(!c) return;
+    const paid = db.payments.filter(p => p.customer_id === cid).reduce((sum, p) => sum + p.amount, 0);
+    const baqaya = c.sale - c.advance - paid;
+    const qistNo = db.payments.filter(p => p.customer_id === cid).length + 1;
+
+    const slip = `
+        <div class="border-2 border-black p-4 bg-white">
+            <h3 class="font-bold text-center text-xl">JUTT BROTHERS ELECTRONICS</h3>
+            <p class="text-center text-sm">03104569041 | Main Branch</p>
+            <hr class="my-2 border-black">
+            <p><b>Date:</b> ${new Date().toLocaleDateString()}</p>
+            <p><b>Customer:</b> ${c.name} - ${c.mobile}</p>
+            <p><b>Address:</b> ${c.area}</p>
+            <p><b>Product:</b> ${c.model} - IMEI: ${c.imei}</p>
+            <hr class="my-2">
+            <p><b>Qist No:</b> ${qistNo} of ${c.total_months}</p>
+            <p><b>Is Mahine Due:</b> Rs. ${c.qist}</p>
+            <p><b>Due Date:</b> 5-${new Date().toLocaleString('default', { month: 'long' })}-2026</p>
+            <p><b>Total Baqaya:</b> Rs. ${baqaya}</p>
+            <hr class="my-2">
+            <p><b>Payment:</b> Cash / JazzCash: 03104569041</p>
+            <div id="qr${cid}" class="my-2"></div>
+            <p class="text-center text-xs mt-2">5 tareekh tak jama karwa dein. Shukriya</p>
+        </div>
+        <button onclick="window.print()" class="no-print mt-2 bg-blue-600 text-white px-4 py-2 rounded">Print Ya Save PDF</button>
+        <button onclick="shareSlip('${c.mobile}','${c.name}',${c.qist},${baqaya})" class="no-print mt-2 bg-green-600 text-white px-4 py-2 rounded ml-2">WhatsApp Bhejo</button>
+    `;
+    document.getElementById('slipDiv').innerHTML = slip;
+    new QRCode(document.getElementById('qr'+cid), `JBE-${c.mobile}-${baqaya}`);
+}
+
+function shareSlip(mobile, name, qist, baqaya) {
+    const msg = `Salam ${name} Bhai,%0AJutt Brothers Electronics%0AJuly 2026 Ki Qist%0ADue: Rs. ${qist}%0ADate: 5-July%0ABaqaya: Rs. ${baqaya}%0AJazzCash: 03104569041%0AShukriya`;
+    window.open(`https://wa.me/92${mobile.substring(1)}?text=${msg}`);
+}
+
+function generateAllSlips() {
+    alert('Sab customers ki slip ban rahi hai. Print dialog khulega.');
+    let allSlips = '';
+    db.customers.forEach(c => {
+        const paid = db.payments.filter(p => p.customer_id === c.id).reduce((sum, p) => sum + p.amount, 0);
+        const baqaya = c.sale - c.advance - paid;
+        if(baqaya > 0) {
+            allSlips += `<div style="page-break-after: always; padding: 20px;">${generateSlipHTML(c, baqaya)}</div>`;
+        }
+    });
+    const win = window.open('', '_blank');
+    win.document.write(`<html><body>${allSlips}</body></html>`);
+    win.print();
+}
+
+function generateSlipHTML(c, baqaya) {
+    return `<h3>JUTT BROTHERS ELECTRONICS - ${c.name} - Rs. ${baqaya}</h3>`;
+}
+
+function generateDefaulter() {
+    let text = 'DEFULTER LIST - JUTT BROTHERS ELECTRONICS\n03104569041\n\n';
+    db.customers.forEach(c => {
+        const paid = db.payments.filter(p => p.customer_id === c.id).reduce((sum, p) => sum + p.amount, 0);
+        const baqaya = c.sale - c.advance - paid;
+        if(baqaya > 0) {
+            text += `${c.name} - ${c.mobile} - Baqaya: Rs. ${baqaya} - ${c.g1_name} ${c.g1_mobile}\n`;
+        }
+    });
+    document.getElementById('defaulterList').value = text;
+}
+
+// Init
+loadCustomers();
+loadExpenses();
+</script>
 </body>
-</html>thankyou so much Lahore
+                    </html>
